@@ -1,5 +1,5 @@
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/public/sw.js');
+    navigator.serviceWorker.register('/pict-alumni-PWA/public/sw.js');
 }
 $(document).ready(() => {
     $('#send').submit((e)=>{

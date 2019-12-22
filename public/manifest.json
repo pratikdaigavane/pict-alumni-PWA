@@ -1,7 +1,7 @@
 {
     "name": "PICT Alumni",
     "short_name": "PICTAlumni",
-    "start_url": "/public/index.html",
+    "start_url": "/pict-alumni-PWA/public/index.html",
     "display": "standalone",
     "background_color": "#FFE9D2",
     "theme_color": "#FFE1C4",
