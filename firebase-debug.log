@@ -1,0 +1,17 @@
+[debug] [2019-12-21T14:29:35.340Z] ----------------------------------------------------------------------
+[debug] [2019-12-21T14:29:35.341Z] Command:       /home/pratik/.nvm/versions/node/v13.1.0/bin/node /home/pratik/.nvm/versions/node/v13.1.0/bin/firebase use --add
+[debug] [2019-12-21T14:29:35.342Z] CLI Version:   7.11.0
+[debug] [2019-12-21T14:29:35.342Z] Platform:      linux
+[debug] [2019-12-21T14:29:35.342Z] Node Version:  v13.1.0
+[debug] [2019-12-21T14:29:35.342Z] Time:          Sat Dec 21 2019 19:59:35 GMT+0530 (India Standard Time)
+[debug] [2019-12-21T14:29:35.342Z] ----------------------------------------------------------------------
+[debug] [2019-12-21T14:29:35.342Z] 
+[debug] [2019-12-21T14:29:35.347Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-21T14:29:35.347Z] > authorizing via signed-in user
+[debug] [2019-12-21T14:29:35.348Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-12-21T14:29:35.348Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-12-21T14:29:35.912Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-21T14:29:35.924Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?pageSize=1000  
+ 
+[debug] [2019-12-21T14:29:37.235Z] <<< HTTP RESPONSE 200
