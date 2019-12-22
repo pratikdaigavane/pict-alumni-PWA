@@ -1,3 +1,6 @@
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+}
 $(document).ready(() => {
     $('#send').submit((e)=>{
         e.preventDefault();
