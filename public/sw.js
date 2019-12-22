@@ -1,8 +1,8 @@
 const staticCacheName = 'site-static';
 const assets = [
-    '/',
-    '/index.html',
-    '/js/main.js'
+    '/pict-alumni-PWA/public/',
+    '/pict-alumni-PWA/public/index.html',
+    '/pict-alumni-PWA/public/js/main.js'
 ];
 
 // install event
