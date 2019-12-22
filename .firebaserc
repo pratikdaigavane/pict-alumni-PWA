@@ -1,5 +1,6 @@
 {
   "projects": {
-    "alumni": "pict-alumni"
+    "alumni": "pict-alumni",
+    "pict": "pict-alumni"
   }
 }
