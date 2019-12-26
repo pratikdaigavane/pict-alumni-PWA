@@ -1,6 +1,6 @@
-// if ('serviceWorker' in navigator) {
-//     navigator.serviceWorker.register('/pict-alumni-PWA/public/sw.js');
-// }
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+}
 
 function getFormData($form) {
     var unindexed_array = $form.serializeArray();
@@ -14,6 +14,8 @@ function getFormData($form) {
 }
 
 $(document).ready(() => {
+
+    $("#loading").hide();
 
     $('#form').submit((e) => {
         console.log('submit ok');
@@ -40,20 +42,25 @@ $(document).ready(() => {
             }
             data.q9 = $("#text_q9").val()
         }
-        console.log(data)
+        console.log(data);
+        $("#loading").show();
+        console.log('l')
         $.ajax({
             url: 'https://us-central1-pict-alumni.cloudfunctions.net/form2',
             method: "post",
             crossDomain: true,
             crossOrigin: true,
-            async: false,
+            async: true,
             contentType: "application/json",
             data: JSON.stringify(data),
             success: function (res) {
+                $("#loading").hide();
                 M.toast({html: res.status});
             },
             error: function (err) {
+                $("#loading").hide();
                 console.log(err)
+                M.toast({html: err})
             }
         })
     })
