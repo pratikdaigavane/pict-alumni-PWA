@@ -27,23 +27,21 @@ $(document).ready(() => {
             data.q9 = $("#text_q9").val()
         console.log(data)
         // var message = $('#message').val();
-        // $.ajax({
-        //     url: 'https://us-central1-pict-alumni.cloudfunctions.net/messageMe',
-        //     method: "post",
-        //     crossDomain: true,
-        //     crossOrigin: true,
-        //     async: false,
-        //     contentType: "application/json",
-        //     data: JSON.stringify({
-        //         text: message
-        //     }),
-        //     success: function (res) {
-        //         M.toast({html: res.message.text});
-        //     },
-        //     error: function (err) {
-        //         alert(err);
-        //     }
-        // })
+        $.ajax({
+            url: 'https://us-central1-pict-alumni.cloudfunctions.net/form2',
+            method: "post",
+            crossDomain: true,
+            crossOrigin: true,
+            async: false,
+            contentType: "application/json",
+            data: data,
+            success: function (res) {
+                M.toast({html: res.message.text});
+            },
+            error: function (err) {
+                alert(err);
+            }
+        })
     })
 
 });
