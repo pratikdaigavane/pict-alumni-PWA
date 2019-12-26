@@ -15,15 +15,6 @@ function getFormData($form){
 
 $(document).ready(() => {
 
-    // $('input').click(function (e) {
-    //     console.log('name=' + $(this).attr('name') + ' ' + e);
-    //     console.log($(this)[0]);
-    //     document.getElementsByName($(this).attr('name')).forEach(function (e) {
-    //         e.checked = false;
-    //         console.log(e);
-    //     });
-    // });
-
     $('#form').submit((e)=>{
         console.log('submit ok')
         e.preventDefault();
