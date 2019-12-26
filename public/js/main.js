@@ -1,27 +1,58 @@
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/pict-alumni-PWA/public/sw.js');
+// if ('serviceWorker' in navigator) {
+//     navigator.serviceWorker.register('/pict-alumni-PWA/public/sw.js');
+// }
+
+function getFormData($form){
+    var unindexed_array = $form.serializeArray();
+    var indexed_array = {};
+
+    $.map(unindexed_array, function(n, i){
+        indexed_array[n['name']] = n['value'];
+    });
+
+    return indexed_array;
 }
+
 $(document).ready(() => {
-    $('#send').submit((e)=>{
+
+    // $('input').click(function (e) {
+    //     console.log('name=' + $(this).attr('name') + ' ' + e);
+    //     console.log($(this)[0]);
+    //     document.getElementsByName($(this).attr('name')).forEach(function (e) {
+    //         e.checked = false;
+    //         console.log(e);
+    //     });
+    // });
+
+    $('#form').submit((e)=>{
+        console.log('submit ok')
         e.preventDefault();
-        var message = $('#message').val();
-        $.ajax({
-            url: 'https://us-central1-pict-alumni.cloudfunctions.net/messageMe',
-            method: "post",
-            crossDomain: true,
-            crossOrigin: true,
-            async: false,
-            contentType: "application/json",
-            data: JSON.stringify({
-                text: message
-            }),
-            success: function (res) {
-                M.toast({html: res.message.text});
-            },
-            error: function (err) {
-                alert(err);
-            }
-        })
+        data = getFormData($('#form'))
+        if(data.q7 == 'yes')
+            data.q7 = $("#text_q7").val()
+        if(data.q8 == 'yes')
+            data.q8 = $("#text_q8").val()
+        if(data.q9 == 'yes')
+            data.q9 = $("#text_q9").val()
+        console.log(data)
+        // var message = $('#message').val();
+        // $.ajax({
+        //     url: 'https://us-central1-pict-alumni.cloudfunctions.net/messageMe',
+        //     method: "post",
+        //     crossDomain: true,
+        //     crossOrigin: true,
+        //     async: false,
+        //     contentType: "application/json",
+        //     data: JSON.stringify({
+        //         text: message
+        //     }),
+        //     success: function (res) {
+        //         M.toast({html: res.message.text});
+        //     },
+        //     error: function (err) {
+        //         alert(err);
+        //     }
+        // })
     })
 
 });
