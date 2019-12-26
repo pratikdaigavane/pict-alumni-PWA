@@ -6,6 +6,7 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
@@ -43,7 +44,7 @@
    }
         
     </style>
-   
+   <script src="js/form1.js"></script>
    
         <nav class="light-blue lighten-1 nav-extended" role="navigation">
                 <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
@@ -59,57 +60,67 @@
               </nav>
               <div class="container">
               <div class="row">
-                    <form class="col s12">
+                    <form class="col s12" id="form">
                       <div class="row">
-                        <div class="input-field col s3">
-                          <input id="yearofg" type="number" class="validate">
+                        <div class="input-field col s12">
+                          <input id="yearofg" name="yearofg" type="number" class="validate">
                           <label for="yearofg">Year of Graduation</label>
                         </div>
-                        <div class="input-field col s2 offset-s2">
-                            <input id="branch" type="text" class="validate">
+                        <div class="input-field col s12">
+                            <input id="branch" name="branch" type="text" class="validate">
                             <label for="branch">Branch</label>
                           </div>
-                        <div class="input-field col s2 offset-s2">
+                        <div class="input-field col s12">
                             <div class="input-field">
-                               <input type="date" class="datepicker">
+                               <input type="date" name="date" class="datepicker">
                                 <label for="birthdate" class="">Date</label>
+                              </div>
+                              <div class="input-field col s12">
+                                <input id="first_name" name="first_name" type="text" class="validate">
+                                <label for="first_name">First Name</label>
+                              </div>
+                              <div class="input-field col s12">
+                                <input id="last_name" name="last_name" type="text" class="validate">
+                                <label for="last_name">Last Name</label>
+                              </div>
+                              <div class="input-field col s12">
+                                <input id="email" name="email" type="email" class="validate">
+                                <label for="email">Email</label>
                               </div>
                         </div>
                       </div>
                       <h3>Current Employee Details: </h3>
                       <div class="row">
                         <div class="input-field col s12 m6">
-                          <input id="PresentOrg" type="text" class="validate">
+                          <input id="PresentOrg" name="PresentOrg" type="text" class="validate">
                           <label for="PresentOrg">Present Organization</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s4">
-                          <input id="presentPost" type="text" class="validate">
+                          <input id="presentPost" name="presentPost" type="text" class="validate">
                           <label for="presentPost"> Present Post</label>
                         </div>
                       </div>
                       <div class="row">
                           <div class="input-field col s12">
-                            <input id="PresentDomain" type= "text" class="validate">
+                            <input id="PresentDomain" name="PresentDomain" type= "text" class="validate">
                             <label for="PresentDomain">Present Domain / Specialization</label>
                           </div>
                           <div class="row">
                               <div class="input-field col s12">
-                                <input id="Address" type="text" class="validate">
+                                <input id="Address" name="Address" type="text" class="validate">
                                 <label for="Address"> Address</label>
                               </div>
                       
-                    </form>
                   </div>
                   <br><br>
                   <h4> Please let’s know in what way you would like to associate with the institute / department-</h4>
-                  <form action="#">
                     <div class="row">
                       <div class="col s6">
                       <p>
                         <label>
-                          <input type="checkbox" />
+                          <input type="checkbox" name="FundedProject" />
                           <span style="font-size: 25px">1. Funded Project (UG/PG)</span>
                         </label>
                       </div>
@@ -117,7 +128,7 @@
                       <div class="col s6">
                       <p>
                           <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="Training" />
                             <span style="font-size: 25px">2. Training to  the faculty & Students </span>
                           </label>
                         </p>
@@ -127,7 +138,7 @@
                         <div class="col s6">
                         <p>
                             <label>
-                              <input type="checkbox" />
+                              <input type="checkbox" name="Workshops" />
                               <span style="font-size: 25px">3. Expert Lectures / Workshops </span>
                             </label>
                           </p>
@@ -135,7 +146,7 @@
                         <div class="col s6">
                           <p>
                               <label>
-                                <input type="checkbox" />
+                                <input type="checkbox" name="Consultancy" />
                                 <span style="font-size: 25px">4. Consultancy </span>
                               </label>
                             </p>
@@ -145,7 +156,7 @@
                             <div class="col s6">
                             <p>
                                 <label>
-                                  <input type="checkbox" />
+                                  <input type="checkbox" name="Industrial" />
                                   <span style="font-size: 25px">5. Industrial Visit</span>
                                 </label>
                               </p>
@@ -153,7 +164,7 @@
                             <div class="col s6">
                               <p>
                                   <label>
-                                    <input type="checkbox" />
+                                    <input type="checkbox" name="Placement" />
                                     <span style="font-size: 25px">6. Placement</span>
                                   </label>
                                 </p>
@@ -163,7 +174,7 @@
                                 <div class="col s6">
                                 <p>
                                     <label>
-                                      <input type="checkbox" />
+                                      <input type="checkbox" name="Linkages" />
                                       <span style="font-size: 25px">7. Industrial Linkages</span>
                                     </label>
                                   </p>
@@ -171,7 +182,7 @@
                                 <div class="col s6">
                                   <p>
                                       <label>
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="RandD" />
                                         <span style="font-size: 25px">8. R & D</span>
                                       </label>
                                     </p>
@@ -181,7 +192,7 @@
                                     <div class="col s6">
                                     <p>
                                         <label>
-                                          <input type="checkbox" />
+                                          <input type="checkbox" name="scholarship" />
                                           <span style="font-size: 25px">9. Student scholarship </span>
                                         </label>
                                       </p>
@@ -189,7 +200,7 @@
                                     <div class="col s6">
                                       <p>
                                           <label>
-                                            <input type="checkbox" />
+                                            <input type="checkbox" name="Lab" />
                                             <span style="font-size: 25px">10. Lab Development </span>
                                           </label>
                                         </p>
@@ -199,7 +210,7 @@
                                         <div class="col s6">
                                         <p>
                                             <label>
-                                              <input type="checkbox" />
+                                              <input type="checkbox" name="advisory" />
                                               <span style="font-size: 25px">11. Academic advisory board </span>
                                             </label>
                                           </p>
@@ -207,7 +218,7 @@
                                         <div class="col s6">
                                           <p>
                                               <label>
-                                                <input type="checkbox" />
+                                                <input type="checkbox" name="Internship" />
                                                 <span style="font-size: 25px">12. Internship for students</span>
                                               </label>
                                             </p>
@@ -217,7 +228,7 @@
                                             <div class="col s6">
                                             <p>
                                                 <label>
-                                                  <input type="checkbox" />
+                                                  <input type="checkbox" name="elective" />
                                                   <span style="font-size: 25px">13. Open elective subject</span>
                                                 </label>
                                               </p>
@@ -225,7 +236,7 @@
                                             <div class="col s6">
                                               <p>
                                                   <label>
-                                                    <input type="checkbox" />
+                                                    <input type="checkbox" name="meritorious" />
                                                     <span style="font-size: 25px">14. Awards for meritorious students</span>
                                                   </label>
                                                 </p>
@@ -235,7 +246,7 @@
                                                 <div class="col s6">
                                                 <p>
                                                     <label>
-                                                      <input type="checkbox" />
+                                                      <input type="checkbox" name="Excellence" />
                                                       <span style="font-size: 25px">15. Centre of Excellence</span>
                                                     </label>
                                                   </p>
@@ -243,7 +254,7 @@
                                                 <div class="col s6">
                                                   <p>
                                                       <label>
-                                                        <input type="checkbox" />
+                                                        <input type="checkbox" name="innovation" />
                                                         <span style="font-size: 25px">16. Start-up and innovation Cell </span>
                                                       </label>
                                                     </p>
@@ -253,7 +264,7 @@
                                                     <div class="col s6">
                                                     <p>
                                                         <label>
-                                                          <input type="checkbox" />
+                                                          <input type="checkbox" name="Entrepreneurship" />
                                                           <span style="font-size: 25px">17. Entrepreneurship Development</span>
                                                         </label>
                                                       </p>
@@ -261,13 +272,14 @@
                                                     <div class="col s6">
                                                       <p>
                                                           <label>
-                                                            <input type="checkbox" />
+                                                            <input type="checkbox" name="MS/M.Tech" />
                                                             <span style="font-size: 25px">18. Extending help for students opting for MS/M.Tech</span>
                                                           </label>
                                                         </p>
                                                       </div>
                                                     </div>
                 </div>
+                <button type="submit">submit</button>
               </form>
     <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
