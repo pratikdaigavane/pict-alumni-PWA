@@ -34,12 +34,12 @@ $(document).ready(() => {
             crossOrigin: true,
             async: false,
             contentType: "application/json",
-            data: data,
+            data: JSON.stringify(data),
             success: function (res) {
-                M.toast({html: res.message.text});
+                M.toast({html: res.status});
             },
             error: function (err) {
-                alert(err);
+                console.log(err)
             }
         })
     })
