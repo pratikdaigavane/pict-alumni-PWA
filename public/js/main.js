@@ -14,6 +14,8 @@ function getFormData($form) {
 }
 
 $(document).ready(() => {
+        $('.sidenav').sidenav();
+        $(".user-view").height($(".sidenav-img").height());
 
     $("#loading").hide();
 
