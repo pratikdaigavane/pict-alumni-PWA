@@ -2,14 +2,14 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js');
 }
 
-function getFormData($form) {
+function getFormData($form, recaptcha) {
     var unindexed_array = $form.serializeArray();
     var indexed_array = {};
 
     $.map(unindexed_array, function (n, i) {
         indexed_array[n['name']] = n['value'];
     });
-
+    indexed_array['g-recaptcha-response'] = recaptcha;
     return indexed_array;
 }
 
@@ -29,7 +29,7 @@ $(document).ready(() => {
     $('#form').submit((e) => {
         console.log('submit ok');
         e.preventDefault();
-        data = getFormData($('#form'));
+        data = getFormData($('#form'), token);
         if (data.q7 == 'yes') {
             if ($("#text_q7").val() == '') {
                 M.toast({html: "In Q7, if yes please mention"});
@@ -51,7 +51,6 @@ $(document).ready(() => {
             }
             data.q9 = $("#text_q9").val()
         }
-        data['g-recaptcha-response'] = token;
         console.log(data);
         $("#loading").show();
         console.log('l')
