@@ -3,6 +3,7 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const cors = require('cors')({origin: true});
+const request = require('request');
 admin.initializeApp();
 
 
@@ -40,6 +41,17 @@ exports.form2 = functions.https.onRequest((req, res) => {
         console.log(req.body);
         let data = req.body;
         validate(data).then((status) => {
+            var secretKey = "6LehkMoUAAAAADn2qT8GVCkg12MJ3Cwq8d2FebKn";
+            // req.connection.remoteAddress will provide IP address of connected user.
+            var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+            // Hitting GET request to the URL, Google will respond with success or error scenario.
+            request(verificationUrl,function(error,response,body) {
+                body = JSON.parse(body);
+                // Success will be true or false depending upon captcha validation.
+                if (body.success !== undefined && !body.success) {
+                    return res.status(400).json({"responseCode": 1, "status": "Failed captcha verification"});
+                }
+            });
             if (status) {
                 admin.database().ref('/form2').push(data).then(() => {
                     res.status(200).json({

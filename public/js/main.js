@@ -14,6 +14,13 @@ function getFormData($form) {
 }
 
 $(document).ready(() => {
+
+    var token;
+    grecaptcha.ready(function () {
+        grecaptcha.execute('6LehkMoUAAAAAEN6oCECJe5KtV_zU3U20_cpAMMt', {action: 'homepage'}).then(function (t) {
+            token = t;
+        });
+    });
         $('.sidenav').sidenav();
         $(".user-view").height($(".sidenav-img").height());
 
@@ -44,6 +51,7 @@ $(document).ready(() => {
             }
             data.q9 = $("#text_q9").val()
         }
+        data['g-recaptcha-response'] = token;
         console.log(data);
         $("#loading").show();
         console.log('l')
