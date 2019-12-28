@@ -1,8 +1,10 @@
-const staticCacheName = 'site-static';
+const staticCacheName = 'site-static1';
 const assets = [
     '',
     '/index.html',
-    '/js/main.js'
+    '/form.html',
+    '/js/main.js',
+    '/img/paa.png',
 ];
 
 // install event
