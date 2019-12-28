@@ -69,7 +69,7 @@ $(document).ready(() => {
             error: function (err) {
                 $("#loading").hide();
                 console.log(err)
-                M.toast({html: err})
+                M.toast({html: err.status})
             }
         })
     })
