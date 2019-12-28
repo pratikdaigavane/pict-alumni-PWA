@@ -49,6 +49,7 @@ exports.form2 = functions.https.onRequest((req, res) => {
                 body = JSON.parse(body);
                 // Success will be true or false depending upon captcha validation.
                 if (body.success !== undefined && !body.success) {
+                    console.log("recaptcha err");
                     return res.status(400).json({"responseCode": 1, "status": "Failed captcha verification"});
                 }
             });
