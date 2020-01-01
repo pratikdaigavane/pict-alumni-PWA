@@ -42,11 +42,6 @@ function getCookie(cname) {
 
 $(document).ready(() => {
 
-        $('.sidenav').sidenav();
-        $(".user-view").height($(".sidenav-img").height());
-
-    $("#loading").hide();
-
     $('#form').submit((e) => {
         console.log('submit ok');
         e.preventDefault();
