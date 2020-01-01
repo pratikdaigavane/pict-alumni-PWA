@@ -1,286 +1,384 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/form1.js"></script>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  </head>
+    <meta name="apple-mobile-web-app-status-bar" content="#05184A">
+    <meta name="theme-color" content="#05184A">
+</head>
 
-  <body>
+<body>
 
-    <style>
-    
-  /* label color */
-   .input-field label {
-     color: #000;
-   }
-   /* label focus color */
-   .input-field input[type=text]:focus + label {
-     color: #000;
-   }
-   /* label underline focus color */
-   .input-field input[type=text]:focus {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* valid color */
-   .input-field input[type=text].valid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* invalid color */
-   .input-field input[type=text].invalid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* icon prefix focus color */
-   .input-field .prefix.active {
-     color: #000;
-   }
-        
-    </style>
-   <script src="js/form1.js"></script>
-   
-        <nav class="light-blue lighten-1 nav-extended" role="navigation">
-                <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-                  <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Navbar Link</a></li>
-                  </ul>
-            
-                  <ul id="nav-mobile" class="sidenav">
-                    <li><a href="#">Navbar Link</a></li>
-                  </ul>
-                  <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+<style>
+    /* colours */
+    :root {
+        --primary: #05184A;
+        --secondary: #05173c;
+        --title: #e6e6e6;
+    }
+
+    /* layout styles */
+    nav {
+        background: var(--primary);
+        border-bottom: 10px solid var(--secondary);
+    }
+
+    nav a {
+        text-transform: uppercase;
+        color: var(--title);
+    }
+
+    nav a span {
+        font-weight: bold;
+    }
+
+    nav .sidenav-trigger {
+        margin: 0;
+    }
+
+    /* recipe styles */
+    .recipes {
+        margin-top: 20px;
+    }
+
+    .card-panel.recipe {
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0px 1px 3px rgba(90, 90, 90, 0.1);
+        display: grid;
+        grid-template-columns: 2fr 6fr 1fr;
+        grid-template-areas: "image details delete";
+        position: relative;
+    }
+
+    .recipe img {
+        grid-area: image;
+        max-width: 60px;
+    }
+
+    .recipe-details {
+        grid-area: details;
+        margin-top: 6px;
+    }
+
+    .recipe-delete {
+        grid-area: delete;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+    }
+
+    .recipe-delete i {
+        font-size: 18px;
+    }
+
+    .recipe-title {
+        font-weight: bold;
+    }
+
+    .recipe-ingredients {
+        font-size: 0.8em;
+    }
+
+    /* form-styles */
+    .add-btn {
+        background: var(--title) !important;
+    }
+
+    input {
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+    }
+
+    .side-form button {
+        background: var(--title);
+        box-shadow: 1px 1px 3px rgba(90, 90, 90, 0.2);
+    }
+
+    form .input-field {
+        margin-top: 30px;
+    }
+
+    label {
+        font-size: larger;
+    }
+
+
+    .sidenav-img {
+        width: 100%;
+    }
+</style>
+<script src="js/form1.js"></script>
+
+<nav class="z-depth-2">
+    <div class="nav-wrapper container center">
+        <a href="/">PICT <span style="font-size: 1.25rem"> Alumni</span></a>
+        <span class="left text-darken-1" style="position: absolute; left:0">
+        <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+      </span>
+    </div>
+</nav>
+
+<!-- side nav -->
+<ul id="side-menu" class="sidenav side-menu">
+    <li>
+        <div class="user-view">
+            <div class="background" style="width: 94%;margin: 3%;">
+                <img src="img/paa.png" class="sidenav-img">
+            </div>
+        </div>
+        <div style="vert-align: middle">
+            <div style="width: 22%; display: inline-block; text-align: right">
+                <i class="material-icons" style="font-size: 4rem">account_circle</i>
+            </div>
+            <div style="line-height: 2rem; width: 74%; display: inline-block">
+                <a href="#email"><span class="grey-text email">jdandturk@gmail.com</span></a>
+            </div>
+        </div>
+    </li>
+    <li><a class="subheader">PICT ALUMNI</a></li>
+    <li><a href="/" class="waves-effect">Home</a></li>
+    <li><a href="form.html" class="waves-effect">Registration</a></li>
+    <li><a href="form2.html" class="waves-effect">Feedback form</a></li>
+    <li><a href="form3.html" class="waves-effect">Open discussion form</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a href="/pages/contact.html" class="waves-effect">
+        <i class="material-icons">mail_outline</i>Contact</a>
+    </li>
+</ul>
+
+<div class="container">
+    <div class="row">
+        <form class="col s12" id="form">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="yearofg" name="yearofg" type="number" class="validate">
+                    <label for="yearofg">Year of Graduation</label>
                 </div>
-              </nav>
-              <div class="container">
-              <div class="row">
-                    <form class="col s12" id="form">
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <input id="yearofg" name="yearofg" type="number" class="validate">
-                          <label for="yearofg">Year of Graduation</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <input id="branch" name="branch" type="text" class="validate">
-                            <label for="branch">Branch</label>
-                          </div>
-                        <div class="input-field col s12">
-                            <div class="input-field">
-                               <input type="date" name="date" class="datepicker">
-                                <label for="birthdate" class="">Date</label>
-                              </div>
-                              <div class="input-field col s12">
-                                <input id="first_name" name="first_name" type="text" class="validate">
-                                <label for="first_name">First Name</label>
-                              </div>
-                              <div class="input-field col s12">
-                                <input id="last_name" name="last_name" type="text" class="validate">
-                                <label for="last_name">Last Name</label>
-                              </div>
-                              <div class="input-field col s12">
-                                <input id="email" name="email" type="email" class="validate">
-                                <label for="email">Email</label>
-                              </div>
-                        </div>
-                      </div>
-                      <h3>Current Employee Details: </h3>
-                      <div class="row">
-                        <div class="input-field col s12 m6">
-                          <input id="PresentOrg" name="PresentOrg" type="text" class="validate">
-                          <label for="PresentOrg">Present Organization</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s4">
-                          <input id="presentPost" name="presentPost" type="text" class="validate">
-                          <label for="presentPost"> Present Post</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                          <div class="input-field col s12">
-                            <input id="PresentDomain" name="PresentDomain" type= "text" class="validate">
-                            <label for="PresentDomain">Present Domain / Specialization</label>
-                          </div>
-                          <div class="row">
-                              <div class="input-field col s12">
-                                <input id="Address" name="Address" type="text" class="validate">
-                                <label for="Address"> Address</label>
-                              </div>
-                      
-                  </div>
-                  <br><br>
-                  <h4> Please let’s know in what way you would like to associate with the institute / department-</h4>
-                    <div class="row">
-                      <div class="col s6">
-                      <p>
-                        <label>
-                          <input type="checkbox" name="FundedProject" />
-                          <span style="font-size: 25px">1. Funded Project (UG/PG)</span>
-                        </label>
-                      </div>
-                      </p>
-                      <div class="col s6">
-                      <p>
-                          <label>
-                            <input type="checkbox" name="Training" />
-                            <span style="font-size: 25px">2. Training to  the faculty & Students </span>
-                          </label>
-                        </p>
-                      </div>
-                      </div>
-                      <div class="row">
-                        <div class="col s6">
+                <div class="input-field col s12">
+                    <input id="branch" name="branch" type="text" class="validate">
+                    <label for="branch">Branch</label>
+                </div>
+                <div class="input-field col s12">
+                    <div class="input-field">
+                        <input type="date" name="date" class="datepicker">
+                        <label for="birthdate" class="">Date</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="first_name" name="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="last_name" name="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="email" name="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+            </div>
+            <h3>Current Employee Details: </h3>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input id="PresentOrg" name="PresentOrg" type="text" class="validate">
+                    <label for="PresentOrg">Present Organization</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4">
+                    <input id="presentPost" name="presentPost" type="text" class="validate">
+                    <label for="presentPost"> Present Post</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="PresentDomain" name="PresentDomain" type="text" class="validate">
+                    <label for="PresentDomain">Present Domain / Specialization</label>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="Address" name="Address" type="text" class="validate">
+                        <label for="Address"> Address</label>
+                    </div>
+
+                </div>
+                <br><br>
+                <h4> Please let’s know in what way you would like to associate with the institute / department-</h4>
+                <div class="row">
+                    <div class="col s6">
                         <p>
                             <label>
-                              <input type="checkbox" name="Workshops" />
-                              <span style="font-size: 25px">3. Expert Lectures / Workshops </span>
+                                <input type="checkbox" name="FundedProject"/>
+                                <span style="font-size: 25px">1. Funded Project (UG/PG)</span>
                             </label>
-                          </p>
-                        </div>
-                        <div class="col s6">
-                          <p>
-                              <label>
-                                <input type="checkbox" name="Consultancy" />
-                                <span style="font-size: 25px">4. Consultancy </span>
-                              </label>
-                            </p>
-                          </div>
-                          </div>
-                          <div class="row">
-                            <div class="col s6">
-                            <p>
-                                <label>
-                                  <input type="checkbox" name="Industrial" />
-                                  <span style="font-size: 25px">5. Industrial Visit</span>
-                                </label>
-                              </p>
-                            </div>
-                            <div class="col s6">
-                              <p>
-                                  <label>
-                                    <input type="checkbox" name="Placement" />
-                                    <span style="font-size: 25px">6. Placement</span>
-                                  </label>
-                                </p>
-                              </div>
-                              </div>
-                              <div class="row">
-                                <div class="col s6">
-                                <p>
-                                    <label>
-                                      <input type="checkbox" name="Linkages" />
-                                      <span style="font-size: 25px">7. Industrial Linkages</span>
-                                    </label>
-                                  </p>
-                                </div>
-                                <div class="col s6">
-                                  <p>
-                                      <label>
-                                        <input type="checkbox" name="RandD" />
-                                        <span style="font-size: 25px">8. R & D</span>
-                                      </label>
-                                    </p>
-                                  </div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col s6">
-                                    <p>
-                                        <label>
-                                          <input type="checkbox" name="scholarship" />
-                                          <span style="font-size: 25px">9. Student scholarship </span>
-                                        </label>
-                                      </p>
-                                    </div>
-                                    <div class="col s6">
-                                      <p>
-                                          <label>
-                                            <input type="checkbox" name="Lab" />
-                                            <span style="font-size: 25px">10. Lab Development </span>
-                                          </label>
-                                        </p>
-                                      </div>
-                                      </div>
-                                      <div class="row">
-                                        <div class="col s6">
-                                        <p>
-                                            <label>
-                                              <input type="checkbox" name="advisory" />
-                                              <span style="font-size: 25px">11. Academic advisory board </span>
-                                            </label>
-                                          </p>
-                                        </div>
-                                        <div class="col s6">
-                                          <p>
-                                              <label>
-                                                <input type="checkbox" name="Internship" />
-                                                <span style="font-size: 25px">12. Internship for students</span>
-                                              </label>
-                                            </p>
-                                            </div>
-                                          </div>
-                                          <div class="row">
-                                            <div class="col s6">
-                                            <p>
-                                                <label>
-                                                  <input type="checkbox" name="elective" />
-                                                  <span style="font-size: 25px">13. Open elective subject</span>
-                                                </label>
-                                              </p>
-                                            </div>
-                                            <div class="col s6">
-                                              <p>
-                                                  <label>
-                                                    <input type="checkbox" name="meritorious" />
-                                                    <span style="font-size: 25px">14. Awards for meritorious students</span>
-                                                  </label>
-                                                </p>
-                                              </div>
-                                              </div>
-                                              <div class="row">
-                                                <div class="col s6">
-                                                <p>
-                                                    <label>
-                                                      <input type="checkbox" name="Excellence" />
-                                                      <span style="font-size: 25px">15. Centre of Excellence</span>
-                                                    </label>
-                                                  </p>
-                                                </div>
-                                                <div class="col s6">
-                                                  <p>
-                                                      <label>
-                                                        <input type="checkbox" name="innovation" />
-                                                        <span style="font-size: 25px">16. Start-up and innovation Cell </span>
-                                                      </label>
-                                                    </p>
-                                                  </div>
-                                                  </div>
-                                                  <div class="row">
-                                                    <div class="col s6">
-                                                    <p>
-                                                        <label>
-                                                          <input type="checkbox" name="Entrepreneurship" />
-                                                          <span style="font-size: 25px">17. Entrepreneurship Development</span>
-                                                        </label>
-                                                      </p>
-                                                    </div>
-                                                    <div class="col s6">
-                                                      <p>
-                                                          <label>
-                                                            <input type="checkbox" name="MS/M.Tech" />
-                                                            <span style="font-size: 25px">18. Extending help for students opting for MS/M.Tech</span>
-                                                          </label>
-                                                        </p>
-                                                      </div>
-                                                    </div>
+                    </div>
+                    </p>
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="Training"/>
+                                <span style="font-size: 25px">2. Training to  the faculty & Students </span>
+                            </label>
+                        </p>
+                    </div>
                 </div>
-                <button type="submit">submit</button>
-              </form>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-  </body>
+                <div class="row">
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="Workshops"/>
+                                <span style="font-size: 25px">3. Expert Lectures / Workshops </span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="Consultancy"/>
+                                <span style="font-size: 25px">4. Consultancy </span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="Industrial"/>
+                                <span style="font-size: 25px">5. Industrial Visit</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="Placement"/>
+                                <span style="font-size: 25px">6. Placement</span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="Linkages"/>
+                                <span style="font-size: 25px">7. Industrial Linkages</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="RandD"/>
+                                <span style="font-size: 25px">8. R & D</span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="scholarship"/>
+                                <span style="font-size: 25px">9. Student scholarship </span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="Lab"/>
+                                <span style="font-size: 25px">10. Lab Development </span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="advisory"/>
+                                <span style="font-size: 25px">11. Academic advisory board </span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="Internship"/>
+                                <span style="font-size: 25px">12. Internship for students</span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="elective"/>
+                                <span style="font-size: 25px">13. Open elective subject</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="meritorious"/>
+                                <span style="font-size: 25px">14. Awards for meritorious students</span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="Excellence"/>
+                                <span style="font-size: 25px">15. Centre of Excellence</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="innovation"/>
+                                <span style="font-size: 25px">16. Start-up and innovation Cell </span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="Entrepreneurship"/>
+                                <span style="font-size: 25px">17. Entrepreneurship Development</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="col s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="MS/M.Tech"/>
+                                <span style="font-size: 25px">18. Extending help for students opting for MS/M.Tech</span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">submit</button>
+        </form>
+</body>
 </html>
