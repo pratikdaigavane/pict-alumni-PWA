@@ -150,3 +150,73 @@ exports.login = functions.https.onRequest((req, res) => {
         });
     });
 });
+
+exports.adminLogin = functions.https.onRequest((req, res) => {
+    cors(req, res, () => {
+        console.log(req.body)
+            if (req.body.email == 'daigavanep@gmail.com' && req.body.password == 'root' ){
+                jwt.sign({user: req.body.email}, 'secretkey', (err, token) => {
+                    res.status(200).json({status: "success", token});
+                })
+            } else
+                res.status(400).json({status: "Invalid email"})
+       
+    });
+});
+
+exports.getData = functions.https.onRequest((req, res) => {
+    cors(req, res, ()=> {
+        verifyToken(req, res ,()=>{
+            var db = admin.database()
+            if(req.body.form == 'form1'){
+                var ref = db.ref("/form1");
+                ref.on("value", function (snapshot) {
+                    console.log(snapshot.val());
+                    res.status(200).json({
+                        status: snapshot.val()
+                    })
+                }, function (errorObject) {
+                    console.log("The read failed: " + errorObject.code);
+                    res.status(400).json({
+                        status: "some error"
+                    })
+                });
+            }
+            else if(req.body.form == 'form2'){
+                var ref = db.ref("/form2");
+                ref.on("value", function (snapshot) {
+                    console.log(snapshot.val());
+                    res.status(200).json({
+                        status: snapshot.val()
+                    })
+                }, function (errorObject) {
+                    console.log("The read failed: " + errorObject.code);
+                    res.status(400).json({
+                        status: "some error"
+                    })
+                });
+            }else if(req.body.form == 'form3'){
+                var ref = db.ref("/form3");
+                ref.on("value", function (snapshot) {
+                    console.log(snapshot.val());
+                    res.status(200).json({
+                        status: snapshot.val()
+                    })
+                }, function (errorObject) {
+                    console.log("The read failed: " + errorObject.code);
+                    res.status(400).json({
+                        status: "some error"
+                    })
+                });
+            }else{
+                res.status(400).json({
+                    status: "invalid chintu"
+                })
+            }
+            
+        })
+        
+    })
+
+})
+
