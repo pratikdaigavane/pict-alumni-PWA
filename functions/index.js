@@ -2,6 +2,7 @@
 
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
+const jwt = require('jsonwebtoken');
 const cors = require('cors')({origin: true});
 const request = require('request');
 admin.initializeApp();
@@ -9,6 +10,23 @@ admin.initializeApp();
 
 var secretKey = "6LehkMoUAAAAADn2qT8GVCkg12MJ3Cwq8d2FebKn";
 
+
+function verifyToken(req, res, next) {
+    const bearerHeader = req.headers['authorization'];
+    if (typeof bearerHeader !== 'undefined') {
+        const bearerToken = bearerHeader.split(' ')[1];
+        req.token = bearerToken;
+        jwt.verify(req.token, 'secretkey', (err, user) => {
+            if (err)
+                res.sendStatus(403);
+            else
+                req.user = user;
+        });
+        next();
+    } else {
+        res.sendStatus(403);
+    }
+}
 
 exports.messageMe = functions.https.onRequest((req, res) => {
     cors(req, res, () => {
@@ -70,15 +88,15 @@ exports.form2 = functions.https.onRequest((req, res) => {
         let data = req.body;
         validate(data).then((status) => {
             if (status) {
-                valRecaptcha(data['g-recaptcha-response'], req.connection.remoteAddress).then((status)=>{
-                    if(status){
+                valRecaptcha(data['g-recaptcha-response'], req.connection.remoteAddress).then((status) => {
+                    if (status) {
                         console.log("pushing into db");
                         admin.database().ref('/form2').push(data).then(() => {
                             res.status(200).json({
                                 status: "success"
                             });
                         });
-                    }else {
+                    } else {
                         res.status(400).json({
                             status: "Recaptcha verification error"
                         })
@@ -95,25 +113,37 @@ exports.form2 = functions.https.onRequest((req, res) => {
     });
 });
 
-exports.form1 = functions.https.onRequest((req, res) => {
+exports.form1 = functions.https.onRequest((req,  res) => {
+    cors(req, res, () => {
+        verifyToken(req, res, ()=>{
+            console.log(req.body);
+            let data = req.body;
+            let status = data;
+            // validate(data).then((status) => {
+            if (status) {
+                admin.database().ref('/form1').push(data).then(() => {
+                    res.status(200).json({
+                        status: "success"
+                    })
+                });
+            } else {
+                res.status(400).json({
+                    status: "Invalid form data!"
+                })
+            }
+        })
+    });
+});
+
+
+exports.login = functions.https.onRequest((req, res) => {
     cors(req, res, () => {
         console.log(req.body);
-        let data = req.body;
-        let status = data;
-        // validate(data).then((status) => {
-        if (status) {
-            admin.database().ref('/form1').push(data).then(() => {
-                res.status(200).json({
-                    status: "success"
-                })
-            });
-        } else {
-            res.status(400).json({
-                status: "Invalid form data!"
+        if (req.body.email == 'pnshiralkar@gmail.com') {
+            jwt.sign({user: req.body.email}, 'secretkey', (err, token) => {
+                res.status(200).json({status: "success", token});
             })
-        }
-
-        // })
-
+        }else
+            res.status(400).json({status: "Invalid email"})
     });
 });
