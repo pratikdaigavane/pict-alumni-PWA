@@ -17,9 +17,9 @@
     <style>
         /* colours */
         :root {
-            --primary: #FFE9D2;
-            --secondary: #FFE1C4;
-            --title: #FF8816;
+            --primary: #05184A;
+            --secondary: #05173c;
+            --title: #e6e6e6;
         }
 
         /* layout styles */
@@ -111,37 +111,55 @@
 </head>
 
 <body>
-    <nav class="z-depth-0">
-        <div class="nav-wrapper container">
-            <a href="/">PICT<span style="font-size: 1.25rem">Alumni</span></a>
-            <span class="right grey-text text-darken-1">
-                <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
-            </span>
+    <nav class="z-depth-2">
+        <div class="nav-wrapper container center">
+            <a href="/">PICT <span style="font-size: 1.25rem"> Alumni</span></a>
+            <span class="left text-darken-1" style="position: absolute; left:0">
+            <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+          </span>
         </div>
     </nav>
-
+    
+    
     <!-- side nav -->
     <ul id="side-menu" class="sidenav side-menu">
+        <li>
+            <div class="user-view">
+                <div class="background" style="width: 94%;margin: 3%;">
+                    <img src="img/paa.png" class="sidenav-img">
+                </div>
+            </div>
+            <div style="vert-align: middle">
+                <div style="width: 22%; display: inline-block; text-align: right">
+                    <i class="material-icons" style="font-size: 4rem">account_circle</i>
+                </div>
+                <div style="line-height: 2rem; width: 74%; display: inline-block">
+                    <a href="#name"><span class="grey-text name">John Doe</span></a><br>
+                    <a href="#email"><span class="grey-text email">jdandturk@gmail.com</span></a>
+                </div>
+            </div>
+        </li>
         <li><a class="subheader">PICT ALUMNI</a></li>
         <li><a href="/" class="waves-effect">Home</a></li>
-        <li><a href="/pages/about.html" class="waves-effect">About</a></li>
+        <li><a href="/about.html" class="waves-effect">About</a></li>
+        <li><a href="form.html" class="waves-effect">Form</a></li>
         <li>
             <div class="divider"></div>
         </li>
         <li><a href="/pages/contact.html" class="waves-effect">
-                <i class="material-icons">mail_outline</i>Contact</a>
+            <i class="material-icons">mail_outline</i>Contact</a>
         </li>
     </ul>
+   
+    
+    
+    
     <div class="container">
         <ul class="collapsible popout">
             <li>
-                <div class="collapsible-header"><i class="material-icons">filter_drama</i>PICT Startup and Innovation
-                    Cell<i class="material-icons" style="margin-left: auto;">keyboard_arrow_down</i></div>
+                <div class="collapsible-header"><i class="small material-icons">fiber_manual_record</i>PICT Startup and Innovation Cell<i class="material-icons" style="margin-left: auto;">keyboard_arrow_down</i></div>
                 <div class="collapsible-body">
                     <ul class="collection">
-                        <li class="collection-header">
-                            <h4>&nbsp;&nbsp;&nbsp;&nbsp; PICT Highlights</h4>
-                        </li>
                         <li class="collection-item">1. PICT Startup and Innovation Cell Inaugurated on 26th January
                             2019. </li>
                         <li class="collection-item">2.The main idea of this cell is to encourage those ideas who are
@@ -151,24 +169,24 @@
                             were already built
                             <br>
 
-                            <b>I) Sanitary Pad Vending Machine</b><br><br>
+                            <b>&nbsp;&nbsp;&nbsp;&nbsp;I) Sanitary Pad Vending Machine</b><br><br>
 
-                            <b>II)Fingerprint based low cost Authentication System</b><br><br>
+                            <b>&nbsp;&nbsp;&nbsp;&nbsp;II)Fingerprint based low cost Authentication System</b><br><br>
 
-                            <b>III) One College One APP</b><br>
+                            <b>&nbsp;&nbsp;&nbsp;&nbsp;III) One College One APP</b><br>
 
                             &nbsp &nbsp These all products are built according to the industrial standards and now we
                             are creating an ecosystem to sell these products in the market.
 
-                            <br><br><b>IV)"Sanitary Pad Vending Machine" already got orders from Rotary Club to deploy
+                            <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp;IV)"Sanitary Pad Vending Machine" already got orders from Rotary Club to deploy
                                 these 11 machines in municipal Schools of Khopoli</b>
 
-                            <b><br><br>V)Sanitary Pad Vending Machine project also appreciated from Google's developer
+                            <b><br><br>&nbsp;&nbsp;&nbsp;&nbsp;V)Sanitary Pad Vending Machine project also appreciated from Google's developer
                                 Group Summit held at J W Marriott in Pune Sep 2019.</b>
                             The girls were recognized as Women's Entrepreneur of Maharashtra.
                             <a href="https://www.youtube.com/watch?v=xCSDJZFXJ8Q"> youtube link </a>
 
-                            <b><br><br>VI) Sanitary Pad Vending Machine project also got the support from the Industrial
+                            <b><br><br>&nbsp;&nbsp;&nbsp;&nbsp;VI) Sanitary Pad Vending Machine project also got the support from the Industrial
                                 Partner Bird Consulting Pvt Ltd to take this project journey ahead.</b>
 
                             <a href="https://www.youtube.com/watch?v=ErwQX_E0mMY"> youtube link</a>
@@ -178,9 +196,12 @@
 
                 </div>
             </li>
+            
+            
             <li>
-                <div class="collapsible-header"><i class="material-icons">filter_drama</i>Art Circle<i
-                        class="material-icons" style="margin-left: auto;">keyboard_arrow_down</i></div>
+                <div class="collapsible-header"><i class="small material-icons">fiber_manual_record</i>Art Circle<i class="material-icons" style="margin-left: auto;">keyboard_arrow_down</i></div>
+                
+                
                 <div class="collapsible-body">
 
                     <ul class="collection">
@@ -188,36 +209,70 @@
                         <li class="collection-item">Ms. Aditi Salunke, PICT student got first prize in Acting Section -Female at Drama “Thoda Bolaychay” presented in Purshottam Karandak'19.</li>
                         <li class="collection-item">
                             <span>Throughout an academic year, PICT Art circle organizes various </span>
+                            
                             <ul class="collection-item">
+
                                 <li class="collection-item">
                                     Events like - Fresher's Meet, Teacher's Day celebration,   Anveshan,  Addiction, Abhivyaktee, Rangvarsha, Art & Crafts Exhibition, Screening of short films created by Alumni, During FE Induction - Career guidance on Sculpture Making,Dance Session, Paper Craft and 3D Painting, Canvas Painting, etc.
                                 </li>
+
                                 <li class="collection-tem">
                                     Workshops like – Theatre workshop & Urban Dance Workshop (Funded by SPPU, Pune), Speech & Essay Writing workshop, Dhol-Tasha Workshop, Funding proposal to SPPU is sent for conduction on “Set Design and Acting Related to Theatre”.
                                 </li>
+
                                 <li class="collection-item">
                                     Competitions like –  Bhajan Singing Competition, Dance Competition, etc.
                                 </li>
+
                             </ul>
                         </li>
                         <li class="collection-item">Ms. Nikita Tube, PICT Art Circle alumni took admission at National School of Drama, New Delhi to continue her interest and passion in acting career.  
                         </li>
                     </ul>
                 </div>
+
             </li>
+
+
+
+
             <li>
-                <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                <div class="collapsible-header"><i class="small material-icons">fiber_manual_record</i>PICT Quiz Club <i class="material-icons" style="margin-left: auto;">keyboard_arrow_down</i></div>    
+                  
+                    <div class="collapsible-body">
+                        <ul class="collection">
+                            <li class="collection-item"> <b>A National Quiz Competition </b> – PICT team stood 3rd position.</li>
+                            <li class="collection-item">PICT Quiz Club organized <b>Quiz Fest'19.</b></li>
+                            <li class="collection-item"><b>AFMC Fest Silhouetters College General Quiz Pandora’s Box </b> – PICT team stood 2nd position.</li>
+                            <li class="collection-item"><b>SLS Fest Symbhav Sports and Entertainment Quiz </b>  – PICT team stood 1st position.</li>
+                            <li class="collection-item"><b>SBI Numero YONO Quiz Regional </b> – PICT team reached into Semi-Final. </li>
+                        </ul>
+                    </div>
+
             </li>
+        
+
+            <li>
+                <div class="collapsible-header"><i class="small material-icons">fiber_manual_record</i>PICT Debate Society <i class="material-icons" style="margin-left: auto;">keyboard_arrow_down</i></div>
+
+                    
+                <div class="collapsible-body">
+                    <ul class="collection">
+                        <li class="collection-item"> PICT Debate Society is <b>formed last year.</b> </li>
+                        <li class="collection-item">During FE Induction program, PICT Debate Society conducted debate session.</li>
+                    </ul>
+                </div>
+            </li>
+        
+        
+        
+        
+        
+        
         </ul>
 
-        <div class="container">
 
-
-
-
-
-        </div>
+       
 
         <div class="container row">
             <a class="waves-effect waves-light btn" name="form1">form1</a>
