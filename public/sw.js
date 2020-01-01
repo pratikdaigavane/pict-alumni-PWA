@@ -1,9 +1,9 @@
-const staticCacheName = 'site-static2';
+const staticCacheName = 'site-static3';
 const assets = [
     '',
     '/index.html',
-    '/form.html',
-    '/js/main.js',
+    '/register.html',
+    '/js/feedback.js',
     '/img/paa.png',
 ];
 

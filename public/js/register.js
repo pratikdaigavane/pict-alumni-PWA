@@ -2,23 +2,8 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js');
 }
 
-function getFormData($form) {
-    var unindexed_array = $form.serializeArray();
-    var indexed_array = {};
-
-    $.map(unindexed_array, function (n, i) {
-        indexed_array[n['name']] = n['value'];
-    });
-
-    return indexed_array;
-}
 
 $(document).ready(() => {
-
-    M.AutoInit();
-    $('.sidenav').sidenav();
-    $(".user-view").height($(".sidenav-img").height());
-    $("#loading").hide();
 
     $('#form').submit((e) => {
         console.log('submit ok');
@@ -35,6 +20,9 @@ $(document).ready(() => {
             crossOrigin: true,
             async: true,
             contentType: "application/json",
+            headers: {
+                "Authorization": "Bearer " + getCookie('auth')
+            },
             data: JSON.stringify(data),
             success: function (res) {
                 $("#loading").hide();

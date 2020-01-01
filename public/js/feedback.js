@@ -2,29 +2,7 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js');
 }
 
-function getFormData($form, recaptcha) {
-    var unindexed_array = $form.serializeArray();
-    var indexed_array = {};
-
-    $.map(unindexed_array, function (n, i) {
-        indexed_array[n['name']] = n['value'];
-    });
-    indexed_array['g-recaptcha-response'] = recaptcha;
-    return indexed_array;
-}
-
 $(document).ready(() => {
-    $('.collapsible').collapsible();
-    var token;
-    grecaptcha.ready(function () {
-        grecaptcha.execute('6LehkMoUAAAAAEN6oCECJe5KtV_zU3U20_cpAMMt', {action: 'homepage'}).then(function (t) {
-            token = t;
-        });
-    });
-    $('.sidenav').sidenav();
-    $(".user-view").height($(".sidenav-img").height());
-
-    $("#loading").hide();
 
     $('#form').submit((e) => {
         console.log('submit ok');

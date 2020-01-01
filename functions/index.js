@@ -29,21 +29,6 @@ function verifyToken(req, res, next) {
     }
 }
 
-exports.messageMe = functions.https.onRequest((req, res) => {
-    cors(req, res, () => {
-        console.log(req.body);
-        let data = req.body;
-        admin.database().ref('/formData').push({
-            text: data
-        }).then(() => {
-            res.status(200).json({
-                message: hello
-            })
-        })
-
-    });
-});
-
 function valRecaptcha(grepres, remoteip) {
     var verificationUrl = "https://recaptcha.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + grepres + "&remoteip=" + remoteip;
 
@@ -114,15 +99,24 @@ exports.form2 = functions.https.onRequest((req, res) => {
     });
 });
 
+
+exports.check = functions.https.onRequest((req, res) => {
+    cors(req, res, () => {
+        verifyToken(req, res, () => {
+            res.status(200).json({"status": "success", "user": req.user.user})
+        })
+    });
+});
+
+
 exports.form1 = functions.https.onRequest((req, res) => {
     cors(req, res, () => {
         verifyToken(req, res, () => {
             console.log(req.body);
             let data = req.body;
             let status = data;
-            // validate(data).then((status) => {
             if (status) {
-                admin.database().ref('/form1').push(data).then(() => {
+                admin.database().ref('/form1/').push(data).then(() => {
                     res.status(200).json({
                         status: "success"
                     })
