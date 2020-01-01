@@ -1,6 +1,7 @@
 'use strict';
 
 const functions = require('firebase-functions');
+const base64 = require('base-64');
 const admin = require('firebase-admin');
 const jwt = require('jsonwebtoken');
 const cors = require('cors')({origin: true});
@@ -113,9 +114,9 @@ exports.form2 = functions.https.onRequest((req, res) => {
     });
 });
 
-exports.form1 = functions.https.onRequest((req,  res) => {
+exports.form1 = functions.https.onRequest((req, res) => {
     cors(req, res, () => {
-        verifyToken(req, res, ()=>{
+        verifyToken(req, res, () => {
             console.log(req.body);
             let data = req.body;
             let status = data;
@@ -138,12 +139,21 @@ exports.form1 = functions.https.onRequest((req,  res) => {
 
 exports.login = functions.https.onRequest((req, res) => {
     cors(req, res, () => {
-        console.log(req.body);
-        if (req.body.email == 'pnshiralkar@gmail.com') {
-            jwt.sign({user: req.body.email}, 'secretkey', (err, token) => {
-                res.status(200).json({status: "success", token});
-            })
-        }else
-            res.status(400).json({status: "Invalid email"})
+        valRecaptcha(req.body['g-recaptcha-response'], req.connection.remoteAddress).then((status) => {
+            if (status) {
+                admin.database().ref('/email-db').once("value", (data) => {
+                    if (base64.encode(req.body.email) in data.val()) {
+                        jwt.sign({user: req.body.email}, 'secretkey', (err, token) => {
+                            res.status(200).json({status: "success", token});
+                        })
+                    } else
+                        res.status(400).json({status: "Invalid email"})
+                });
+            } else {
+                res.status(400).json({
+                    status: "Recaptcha verification error"
+                })
+            }
+        });
     });
 });

@@ -42,12 +42,6 @@ function getCookie(cname) {
 
 $(document).ready(() => {
 
-    var token;
-    grecaptcha.ready(function () {
-        grecaptcha.execute('6LehkMoUAAAAAEN6oCECJe5KtV_zU3U20_cpAMMt', {action: 'homepage'}).then(function (t) {
-            token = t;
-        });
-    });
         $('.sidenav').sidenav();
         $(".user-view").height($(".sidenav-img").height());
 
@@ -58,29 +52,34 @@ $(document).ready(() => {
         e.preventDefault();
         data = $("#email").val();
         $("#loading").show();
-        $.ajax({
-            url: 'https://us-central1-pict-alumni.cloudfunctions.net/login',
-            method: "post",
-            crossDomain: true,
-            crossOrigin: true,
-            async: true,
-            contentType: "application/json",
-            data: JSON.stringify({"email": data}),
-
-            success: function (res) {
-                $("#loading").hide();
-                M.toast({html: res.status});
-                if(res.status == 'success')
-                    setCookie('auth', res.token, 1);
-                if(findGetParameter('redirect'))
-                    window.location = findGetParameter('redirect');
-            },
-            error: function (err) {
-                $("#loading").hide();
-                console.log(err);
-                M.toast({html: err.status})
-            }
-        })
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LehkMoUAAAAAEN6oCECJe5KtV_zU3U20_cpAMMt', {action: 'homepage'}).then(function (token) {
+                $.ajax({
+                    url: 'https://us-central1-pict-alumni.cloudfunctions.net/login',
+                    method: "post",
+                    crossDomain: true,
+                    crossOrigin: true,
+                    async: true,
+                    contentType: "application/json",
+                    data: JSON.stringify({"email": data, "g-recaptcha-response": token}),
+                    success: function (res) {
+                        $("#loading").hide();
+                        M.toast({html: res.status});
+                        if(res.status == 'success')
+                            setCookie('auth', res.token, 1);
+                        if(findGetParameter('redirect'))
+                            window.location = findGetParameter('redirect');
+                        else
+                            window.location = "https://pict-alumni.web.app/home.html"
+                    },
+                    error: function (err) {
+                        $("#loading").hide();
+                        console.log(err);
+                        M.toast({html: JSON.parse(err.responseText).status})
+                    }
+                })
+            });
+        });
     })
 
 });
