@@ -138,6 +138,7 @@ exports.form1 = functions.https.onRequest((req,  res) => {
 
 exports.login = functions.https.onRequest((req, res) => {
     cors(req, res, () => {
+        console.log(req.body);
         if (req.body.email == 'pnshiralkar@gmail.com') {
             jwt.sign({user: req.body.email}, 'secretkey', (err, token) => {
                 res.status(200).json({status: "success", token});
