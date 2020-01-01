@@ -3,12 +3,13 @@
 <head>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/theme.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <script src="js/auth.js"></script>
+
     <script src="js/theme.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -20,106 +21,6 @@
 </head>
 
 <body>
-
-<style>
-    /* colours */
-    :root {
-        --primary: #05184A;
-        --secondary: #05173c;
-        --title: #e6e6e6;
-    }
-
-    /* layout styles */
-    nav {
-        background: var(--primary);
-        border-bottom: 10px solid var(--secondary);
-    }
-
-    nav a {
-        text-transform: uppercase;
-        color: var(--title);
-    }
-
-    nav a span {
-        font-weight: bold;
-    }
-
-    nav .sidenav-trigger {
-        margin: 0;
-    }
-
-    /* recipe styles */
-    .recipes {
-        margin-top: 20px;
-    }
-
-    .card-panel.recipe {
-        border-radius: 8px;
-        padding: 10px;
-        box-shadow: 0px 1px 3px rgba(90, 90, 90, 0.1);
-        display: grid;
-        grid-template-columns: 2fr 6fr 1fr;
-        grid-template-areas: "image details delete";
-        position: relative;
-    }
-
-    .recipe img {
-        grid-area: image;
-        max-width: 60px;
-    }
-
-    .recipe-details {
-        grid-area: details;
-        margin-top: 6px;
-    }
-
-    .recipe-delete {
-        grid-area: delete;
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
-    }
-
-    .recipe-delete i {
-        font-size: 18px;
-    }
-
-    .recipe-title {
-        font-weight: bold;
-    }
-
-    .recipe-ingredients {
-        font-size: 0.8em;
-    }
-
-    /* form-styles */
-    .add-btn {
-        background: var(--title) !important;
-    }
-
-    input {
-        box-shadow: none !important;
-        -webkit-box-shadow: none !important;
-    }
-
-    .side-form button {
-        background: var(--title);
-        box-shadow: 1px 1px 3px rgba(90, 90, 90, 0.2);
-    }
-
-    form .input-field {
-        margin-top: 30px;
-    }
-
-    label {
-        font-size: larger;
-    }
-
-
-    .sidenav-img {
-        width: 100%;
-    }
-</style>
 <script src="js/register.js"></script>
 
 <nav class="z-depth-2">
@@ -163,6 +64,8 @@
 
 <div class="container">
     <div class="row">
+
+        <h3>Register: </h3>
         <form class="col s12" id="form">
             <div class="row">
                 <div class="input-field col s12">
@@ -218,171 +121,9 @@
 
                 </div>
                 <br><br>
-                <h4> Please let’s know in what way you would like to associate with the institute / department-</h4>
-                <div class="row">
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="FundedProject"/>
-                                <span style="font-size: 25px">1. Funded Project (UG/PG)</span>
-                            </label>
-                    </div>
-                    </p>
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="Training"/>
-                                <span style="font-size: 25px">2. Training to  the faculty & Students </span>
-                            </label>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="Workshops"/>
-                                <span style="font-size: 25px">3. Expert Lectures / Workshops </span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="Consultancy"/>
-                                <span style="font-size: 25px">4. Consultancy </span>
-                            </label>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="Industrial"/>
-                                <span style="font-size: 25px">5. Industrial Visit</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="Placement"/>
-                                <span style="font-size: 25px">6. Placement</span>
-                            </label>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="Linkages"/>
-                                <span style="font-size: 25px">7. Industrial Linkages</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="RandD"/>
-                                <span style="font-size: 25px">8. R & D</span>
-                            </label>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="scholarship"/>
-                                <span style="font-size: 25px">9. Student scholarship </span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="Lab"/>
-                                <span style="font-size: 25px">10. Lab Development </span>
-                            </label>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="advisory"/>
-                                <span style="font-size: 25px">11. Academic advisory board </span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="Internship"/>
-                                <span style="font-size: 25px">12. Internship for students</span>
-                            </label>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="elective"/>
-                                <span style="font-size: 25px">13. Open elective subject</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="meritorious"/>
-                                <span style="font-size: 25px">14. Awards for meritorious students</span>
-                            </label>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="Excellence"/>
-                                <span style="font-size: 25px">15. Centre of Excellence</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="innovation"/>
-                                <span style="font-size: 25px">16. Start-up and innovation Cell </span>
-                            </label>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="Entrepreneurship"/>
-                                <span style="font-size: 25px">17. Entrepreneurship Development</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="MS/M.Tech"/>
-                                <span style="font-size: 25px">18. Extending help for students opting for MS/M.Tech</span>
-                            </label>
-                        </p>
-                    </div>
-                </div>
             </div>
-            <button type="submit">submit</button>
+            <button class="btn waves-effect waves-light blue right" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
         </form>
+    </div>
 </body>
 </html>

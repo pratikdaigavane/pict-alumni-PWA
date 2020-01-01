@@ -40,7 +40,7 @@ $(document).ready(() => {
                 }
             },
             error: function (err) {
-                window.location = "/";
+                window.location = "/?redirect=" + window.location.href;
                 M.toast({html: "Please login"})
             }
         })
