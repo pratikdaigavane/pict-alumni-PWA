@@ -14,9 +14,6 @@ function getFormData($form, recaptcha) {
 }
 
 $(document).ready(() => {
-<<<<<<< HEAD
-
-=======
     $('.collapsible').collapsible();
     var token;
     grecaptcha.ready(function () {
@@ -24,9 +21,10 @@ $(document).ready(() => {
             token = t;
         });
     });
->>>>>>> 219c48473ab355f4ddbcd8d6cc87914b84ff57b2
         $('.sidenav').sidenav();
         $(".user-view").height($(".sidenav-img").height());
+    $('.sidenav').sidenav();
+    $(".user-view").height($(".sidenav-img").height());
 
     $("#loading").hide();
 
