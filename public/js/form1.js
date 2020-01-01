@@ -15,6 +15,9 @@ function getFormData($form) {
 
 $(document).ready(() => {
 
+    M.AutoInit();
+    $('.sidenav').sidenav();
+    $(".user-view").height($(".sidenav-img").height());
     $("#loading").hide();
 
     $('#form').submit((e) => {

@@ -30,27 +30,6 @@ $(document).ready(() => {
         console.log('submit ok');
         e.preventDefault();
         data = getFormData($('#form'), "");
-        if (data.q7 == 'yes') {
-            if ($("#text_q7").val() == '') {
-                M.toast({html: "In Q7, if yes please mention"});
-                return;
-            }
-            data.q7 = $("#text_q7").val()
-        }
-        if (data.q8 == 'yes') {
-            if ($("#text_q8").val() == '') {
-                M.toast({html: "In Q8, if yes please mention"});
-                return;
-            }
-            data.q8 = $("#text_q8").val()
-        }
-        if (data.q9 == 'yes') {
-            if ($("#text_q9").val() == '') {
-                M.toast({html: "In Q9, if yes please mention"});
-                return;
-            }
-            data.q9 = $("#text_q9").val()
-        }
         console.log(data);
         $("#loading").show();
         console.log('l');
