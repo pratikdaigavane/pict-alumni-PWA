@@ -72,28 +72,29 @@ exports.form2 = functions.https.onRequest((req, res) => {
     cors(req, res, () => {
         console.log(req.body);
         let data = req.body;
-        validate(data).then((status) => {
-            if (status) {
-                valRecaptcha(data['g-recaptcha-response'], req.connection.remoteAddress).then((status) => {
-                    if (status) {
-                        console.log("pushing into db");
-                        admin.database().ref('/form2').push(data).then(() => {
-                            res.status(200).json({
-                                status: "success"
+        verifyToken(req, res, () => {
+            validate(data).then((status) => {
+                if (status) {
+                    valRecaptcha(data['g-recaptcha-response'], req.connection.remoteAddress).then((status) => {
+                        if (status) {
+                            console.log("pushing into db");
+                            admin.database().ref('/form2').push(data).then(() => {
+                                res.status(200).json({
+                                    status: "success"
+                                });
                             });
-                        });
-                    } else {
-                        res.status(400).json({
-                            status: "Recaptcha verification error"
-                        })
-                    }
-                });
-            } else {
-                res.status(400).json({
-                    status: "Invalid form data!"
-                })
-            }
-
+                        } else {
+                            res.status(400).json({
+                                status: "Recaptcha verification error"
+                            })
+                        }
+                    });
+                } else {
+                    res.status(400).json({
+                        status: "Invalid form data!"
+                    })
+                }
+            });
         })
 
     });
@@ -111,22 +112,20 @@ exports.check = functions.https.onRequest((req, res) => {
 
 exports.form1 = functions.https.onRequest((req, res) => {
     cors(req, res, () => {
-        verifyToken(req, res, () => {
-            console.log(req.body);
-            let data = req.body;
-            let status = data;
-            if (status) {
-                admin.database().ref('/form1/').push(data).then(() => {
-                    res.status(200).json({
-                        status: "success"
-                    })
-                });
-            } else {
-                res.status(400).json({
-                    status: "Invalid form data!"
+        console.log(req.body);
+        let data = req.body;
+        let status = data;
+        if (status) {
+            admin.database().ref('/form1/').push(data).then(() => {
+                res.status(200).json({
+                    status: "success"
                 })
-            }
-        })
+            });
+        } else {
+            res.status(400).json({
+                status: "Invalid form data!"
+            })
+        }
     });
 });
 

@@ -22,6 +22,9 @@ $(document).ready(() => {
                     async: true,
                     contentType: "application/json",
                     data: JSON.stringify(data),
+                    headers: {
+                        "Authorization": "Bearer " + getCookie('auth')
+                    },
                     success: function (res) {
                         $("#loading").hide();
                         M.toast({html: res.status});

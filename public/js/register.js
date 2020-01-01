@@ -20,9 +20,6 @@ $(document).ready(() => {
             crossOrigin: true,
             async: true,
             contentType: "application/json",
-            headers: {
-                "Authorization": "Bearer " + getCookie('auth')
-            },
             data: JSON.stringify(data),
             success: function (res) {
                 $("#loading").hide();
