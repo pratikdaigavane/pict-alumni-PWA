@@ -15,12 +15,6 @@ function getFormData($form, recaptcha) {
 
 $(document).ready(() => {
 
-    var token;
-    grecaptcha.ready(function () {
-        grecaptcha.execute('6LehkMoUAAAAAEN6oCECJe5KtV_zU3U20_cpAMMt', {action: 'homepage'}).then(function (t) {
-            token = t;
-        });
-    });
         $('.sidenav').sidenav();
         $(".user-view").height($(".sidenav-img").height());
 
@@ -29,7 +23,7 @@ $(document).ready(() => {
     $('#form').submit((e) => {
         console.log('submit ok');
         e.preventDefault();
-        data = getFormData($('#form'), token);
+        data = getFormData($('#form'), "");
         if (data.q7 == 'yes') {
             if ($("#text_q7").val() == '') {
                 M.toast({html: "In Q7, if yes please mention"});
@@ -53,25 +47,30 @@ $(document).ready(() => {
         }
         console.log(data);
         $("#loading").show();
-        console.log('l')
-        $.ajax({
-            url: 'https://us-central1-pict-alumni.cloudfunctions.net/form2',
-            method: "post",
-            crossDomain: true,
-            crossOrigin: true,
-            async: true,
-            contentType: "application/json",
-            data: JSON.stringify(data),
-            success: function (res) {
-                $("#loading").hide();
-                M.toast({html: res.status});
-            },
-            error: function (err) {
-                $("#loading").hide();
-                console.log(err)
-                M.toast({html: err.status})
-            }
-        })
+        console.log('l');
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LehkMoUAAAAAEN6oCECJe5KtV_zU3U20_cpAMMt', {action: 'homepage'}).then(function (token) {
+                data['g-recaptcha-response'] = token;
+                $.ajax({
+                    url: 'https://us-central1-pict-alumni.cloudfunctions.net/form2',
+                    method: "post",
+                    crossDomain: true,
+                    crossOrigin: true,
+                    async: true,
+                    contentType: "application/json",
+                    data: JSON.stringify(data),
+                    success: function (res) {
+                        $("#loading").hide();
+                        M.toast({html: res.status});
+                    },
+                    error: function (err) {
+                        $("#loading").hide();
+                        console.log(err)
+                        M.toast({html: JSON.parse(err.responseText).status})
+                    }
+                });
+            });
+        });
     })
 
 });
