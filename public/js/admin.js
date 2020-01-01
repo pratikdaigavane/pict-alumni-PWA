@@ -1,3 +1,7 @@
+
+var gameplaying = true;
+var openform = true;
+
 $(document).ready(()=>{
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -6,11 +10,42 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-function showInTable(joshi){
-    console.log(JSON.parse)
-    $('body').html(JSON.stringify(joshi))
+function showInTable(joshi,selector){
+    
+    var joshi = Object.values(joshi);
+    var cols = Headers(joshi,selector);
+    for(var i=0;i<joshi.length;i++) {
+        var row = $('<tr/>');
+        for(var colIndex =0;colIndex<cols.length;colIndex++) {
+            var val = joshi[i][cols[colIndex]];
+            if(val == null) val ="";
+                row.append($('<td/>').html(val));
+        }
+        $(selector).append(row);
+    }
 
 }
+
+function Headers(joshi,selector) {
+    var columns = [];
+    var header = $('<tr/>');
+    for(var i=0;i<joshi.length;i++) {
+        var row = joshi[i];
+
+        for (var k in row ) {
+            if($.inArray(k,columns) == -1) {
+                columns.push(k);
+
+
+                header.append($('<th/>').html(k));
+            }
+        }
+    }
+
+    $(selector).append(header);
+    return columns;
+}
+
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -38,7 +73,13 @@ $('#form1').click(()=>{
             "Authorization": "Bearer " + getCookie('auth')
         },
         success: function (res) {
-           showInTable(res.status)
+            
+            $('#fourth').css('display','none')
+            $('#third').css('display','block')
+            if(gameplaying) {
+           showInTable(res.status,'#third');
+           gameplaying = false;
+            }
         },
         error: function (err) {
             console.log(err)
@@ -59,7 +100,14 @@ $('#form2').click(()=>{
             "Authorization": "Bearer " + getCookie('auth')
         },
         success: function (res) {
-            showInTable(res.status)
+            
+            $('#third').css('display','none')
+            $('#fourth').css('display','block')
+            if(openform) {
+            showInTable(res.status, '#fourth');
+            openform = false;
+            
+            }
         },
         error: function (err) {
             console.log(err)
@@ -89,7 +137,7 @@ $('#login').submit((e) => {
                     },
         error: function (err) {
             console.log(err);
-            alert('uthata hain re lavde tera')
+            alert('invalid login details')
         }
     })
 
@@ -97,3 +145,4 @@ $('#login').submit((e) => {
 
 
 })
+
