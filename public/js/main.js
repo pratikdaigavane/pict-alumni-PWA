@@ -14,7 +14,17 @@ function getFormData($form, recaptcha) {
 }
 
 $(document).ready(() => {
+<<<<<<< HEAD
 
+=======
+    $('.collapsible').collapsible();
+    var token;
+    grecaptcha.ready(function () {
+        grecaptcha.execute('6LehkMoUAAAAAEN6oCECJe5KtV_zU3U20_cpAMMt', {action: 'homepage'}).then(function (t) {
+            token = t;
+        });
+    });
+>>>>>>> 219c48473ab355f4ddbcd8d6cc87914b84ff57b2
         $('.sidenav').sidenav();
         $(".user-view").height($(".sidenav-img").height());
 
