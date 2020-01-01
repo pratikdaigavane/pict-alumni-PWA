@@ -68,6 +68,7 @@ $('#form2').click(()=>{
 })
 $('#login').submit((e) => {
     e.preventDefault()
+    $('#submit_button').addClass("disabled")
   
     var email = $('#email').val()
     var password = $('#password').val()
@@ -86,10 +87,12 @@ $('#login').submit((e) => {
                 setCookie('auth', res.token, 1);
                 $('#first').css('display','none')
                 $('#second').css('display','block')
+                
                     },
         error: function (err) {
             console.log(err);
-            alert('uthata hain re lavde tera')
+            alert('Invalid Credentials')
+            $('#submit_button').removeClass("disabled")
         }
     })
 
