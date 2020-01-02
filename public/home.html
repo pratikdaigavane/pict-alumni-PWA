@@ -18,6 +18,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/theme.js"></script>
     <script src="js/auth.js"></script>
+    <script>
+        $(document).ready(function () {
+            if(getCookie('feedback'))
+                $("#feedback_btn").attr('disabled', true);
+            if(getCookie('opendiscussion'))
+                $("#opendiscussion_btn").attr('disabled', true);
+        })
+    </script>
 </head>
 
 <body>
@@ -35,8 +43,8 @@
         <h4 class="center" style="font-weight: lighter;">Reunion of 1983-1994 Batch</h4 class="center">
     </div>
     <div class="container row center">
-        <a class="waves-effect waves-light btn btrn blue" href="feedback.html" name="form2">Feedback form</a><br><br>
-        <a class="waves-effect waves-light btn btrn blue" href="opendiscussion.html" name="form2">Open Discussion form</a>
+        <a class="waves-effect waves-light btn btrn blue" id="feedback_btn" href="feedback.html" name="form2">Feedback form</a><br><br>
+        <a class="waves-effect waves-light btn btrn blue" id="opendiscussion_btn" href="opendiscussion.html" name="form2">Open Discussion form</a>
     </div>
 
     <ul class="collapsible popout">

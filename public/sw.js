@@ -1,5 +1,5 @@
-const staticCacheName = 'site-static4';
-const assets1 = [
+const staticCacheName = 'site-static6';
+const assets6 = [
     '',
     '/index.html',
     '/register.html',
@@ -13,7 +13,7 @@ self.addEventListener('install', evt => {
     evt.waitUntil(
         caches.open(staticCacheName).then((cache) => {
             console.log('caching shell assets');
-            cache.addAll(assets1);
+            cache.addAll(assets6);
         })
     );
 });
