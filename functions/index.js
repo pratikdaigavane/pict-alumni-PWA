@@ -155,22 +155,46 @@ exports.login = functions.https.onRequest((req, res) => {
     cors(req, res, () => {
         valRecaptcha(req.body['g-recaptcha-response'], req.connection.remoteAddress).then((status) => {
             if (status) {
-                admin.database().ref('/email-db').once("value", (data) => {
-                    if (base64.encode(req.body.email) in data.val()) {
-                        jwt.sign({user: req.body.email}, 'secretkey', (err, token) => {
-                            res.status(200).json({status: "success", token});
-                        })
-                    } else
-                        res.status(400).json({status: "Invalid email"})
-                });
+                if(isNaN(req.body.email)) {
+                    admin.database().ref('/email-db')
+                        .orderByChild('email').equalTo("" + req.body.email).on("value", function (data) {
+                        if (data.val() == null)
+                            res.status(400).json({
+                                status: "Email not registered!"
+                            });
+
+                        data.forEach(function (data) {
+                            jwt.sign({user: data.val()}, 'secretkey', (err, token) => {
+                                res.status(200).json({status: "success", token});
+                            })
+                        });
+                    });
+                }else{
+                    admin.database().ref('/email-db')
+                        .orderByChild('phone_no').equalTo("" + req.body.email).on("value", function (data) {
+                        if (data.val() == null)
+                            res.status(400).json({
+                                status: "Mobile not registered!"
+                            });
+
+                        data.forEach(function (data) {
+                            jwt.sign({user: data.val()}, 'secretkey', (err, token) => {
+                                res.status(200).json({status: "success", token});
+                            })
+                        });
+                    });
+                }
+
             } else {
                 res.status(400).json({
                     status: "Recaptcha verification error"
                 })
             }
         });
-    });
-});
+    })
+    ;
+})
+;
 
 exports.adminLogin = functions.https.onRequest((req, res) => {
     cors(req, res, () => {
