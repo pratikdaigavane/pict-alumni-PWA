@@ -1,10 +1,14 @@
 /* colours */
+
 :root {
     --primary: #05184A;
     --secondary: #05173c;
     --title: #e6e6e6;
 }
 
+.btrn{
+    border-radius: 18px;
+}
 /* layout styles */
 nav {
     background: var(--primary);

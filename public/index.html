@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="icon" type="image/x-icon" href="/img/icons/icon-96x96.png">
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,6 +18,7 @@
 
     <link rel="stylesheet" href="css/theme.css">
     <!--JavaScript at end of body for optimized loading-->
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6LehkMoUAAAAAEN6oCECJe5KtV_zU3U20_cpAMMt"></script>
@@ -26,45 +28,17 @@
 </head>
 
 <body>
+    <div class="navbar-fixed">
 <nav class="z-depth-2">
     <div class="nav-wrapper container center">
         <a href="/">PICT <span style="font-size: 1.25rem"> Alumni</span></a>
         <span class="left text-darken-1" style="position: absolute; left:0">
-        <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
       </span>
     </div>
 </nav>
+</div>
 
 
-<!-- side nav -->
-<ul id="side-menu" class="sidenav side-menu">
-    <li>
-        <div class="user-view">
-            <div class="background" style="width: 94%;margin: 3%;">
-                <img src="img/paa.png" class="sidenav-img">
-            </div>
-        </div>
-        <div style="vert-align: middle">
-            <div style="width: 22%; display: inline-block; text-align: right">
-                <i class="material-icons" style="font-size: 4rem">account_circle</i>
-            </div>
-            <div style="line-height: 2rem; width: 74%; display: inline-block">
-                <a href="#name"><span class="grey-text name">Login</span></a><br>
-                <a href="#email"><span class="grey-text email"></span></a>
-            </div>
-        </div>
-    </li>
-    <li><a class="subheader">PICT ALUMNI</a></li>
-    <li><a href="/" class="waves-effect">Home</a></li>
-    <li><a href="/about.html" class="waves-effect">About</a></li>
-    <li><a href="register.html" class="waves-effect">Form</a></li>
-    <li>
-        <div class="divider"></div>
-    </li>
-    <li><a href="/pages/contact.html" class="waves-effect">
-        <i class="material-icons">mail_outline</i>Contact</a>
-    </li>
-</ul>
 
 <div class="container">
 
@@ -73,16 +47,24 @@
         <h1 class="center">
             Welcome!
         </h1>
-        <h3 class="center">Silver Jubilee alumni meet</h3><br><br><br><br><br><br>
+        <h3 class="center">Silver Jubilee Alumni Meet</h3>
+        <br>
+        <h4 class="center" style="font-weight: lighter;">Reunion of 1983-1994 Batch</h4 class="center">
+        <br><br><br>
         <h5 class="center">
             Please let us know your identity
         </h5>
     </div>
     <div class="row">
         <div class="input-field col s12">
+            <label for="email">Email</label>
             <input id="email" type="text" class="validate">
-            <input type="submit" class="btn right" style="margin-top: 15px">
-            <label for="email">Email or Phone No.</label>
+            <button type="submit" class="btn right btrn" style="margin-top: 15px">Check In<i class="material-icons right">send</i></button>
+            
+        
+        </div>
+        <div class="col">
+            <a href="./register.html">Register</a>
         </div>
     </div>
 </form>
