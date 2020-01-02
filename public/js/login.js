@@ -65,7 +65,7 @@ $(document).ready(() => {
                         if(findGetParameter('redirect'))
                             window.location = findGetParameter('redirect');
                         else
-                            window.location = "https://pict-alumni.web.app/home.html"
+                            window.location = "/home.html"
                     },
                     error: function (err) {
                         $("#loading").hide();
