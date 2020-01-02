@@ -28,6 +28,7 @@ $(document).ready(() => {
                     success: function (res) {
                         $("#loading").hide();
                         M.toast({html: res.status});
+                        window.location = '/response.html'
                     },
                     error: function (err) {
                         $("#loading").hide();

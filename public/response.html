@@ -6,11 +6,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/theme.css">
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="manifest" href="manifest.json">
     <!-- ios support -->
+    <script src="js/theme.js"></script>
     <link rel="apple-touch-icon" href="img/icons/icon-96x96.png">
     <meta name="apple-mobile-web-app-status-bar" content="#05184A">
     <meta name="theme-color" content="#05184A">
@@ -114,6 +116,7 @@
 <body>
 
 
+    <div w3-include-html="theme.html"></div>
 
 
     <div class="container">
@@ -145,7 +148,11 @@
     </div>
     
    
-
+<script>
+    setTimeout(()=>{
+        window.location = '/home.html'
+    },3000)
+</script>
 
 
 
