@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -22,13 +22,7 @@
 
     <script src="js/auth.js"></script>
     <script src="js/theme.js"></script>
-    <script src="js/feedback.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.modal');
-            var instances = M.Modal.init(elems, options);
-        });
-    </script>
+    <script src="js/opendiscussion.js"></script>
 
 
 </head>
@@ -63,9 +57,8 @@
     </li>
     <li><a class="subheader">PICT ALUMNI</a></li>
     <li><a href="/" class="waves-effect">Home</a></li>
-    <li><a href="register.html" class="waves-effect">Registration</a></li>
     <li><a href="feedback.html" class="waves-effect">Feedback form</a></li>
-    <li><a href="form3.html" class="waves-effect">Open discussion form</a></li>
+    <li><a href="opendiscussion.html" class="waves-effect">Open discussion form</a></li>
     <li>
         <div class="divider"></div>
     </li>
@@ -75,30 +68,156 @@
 </ul>
 
 
+<!-- Open discussion Form -->
 
 
+<div class="container">
 
 
+    <form id="form">
+        <div class="row"><h3>Open Discussion</h3></div>
 
+        <ul class="collection">
 
+            <!--Q1-->
+            <li class="collection-item">
+                <div class="row"><br>
+                    <div class="col s1 l1 "><span class="flow-text">1.</span></div>
+                    <div class="col s11  l11 "><span class="flow-text">Would you like to contribute to infrastructure development?</span>
+                    </div>
+                    <br><br>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q1-1" type="checkbox"
+                                                                                 value="Auditiorium"/><span
+                            style="font-size: 1.25rem">Auditiorium</span></label></p></div>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q1-2" type="checkbox"
+                                                                                 value="Entrepreneurship Development Cell"/><span
+                            style="font-size: 1.25rem">Entrepreneurship Development Cell </span></label></p></div>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q1-3" type="checkbox"
+                                                                                 value="Innovation and Product Development"/><span
+                            style="font-size: 1.25rem">Innovation and Product Development</span></label></p></div>
+                    <div class="input-field col s10 offset-s2 l6 offset-l1">
+                        <textarea placeholder="" name="q2" id="use" type="text" class="materialize-textarea validate"></textarea>
+                        <label for="use">
+                            <spam class="flow-text">How would you like it to be utilized?</spam>
+                        </label>
+                    </div>
+            </li>
 
+            <!--Q2-->
+            <li class="collection-item">
+                <div class="row"><br>
+                    <div class="col s1 l1 "><span class="flow-text">2.</span></div>
+                    <div class="col s11  l11 "><span class="flow-text">Are you willing to sponsor the events?</span>
+                    </div>
+                    <br><br>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q3-1" type="checkbox"
+                                                                                 value="INC"/><span
+                            style="font-size: 1.25rem">INC</span></label></p></div>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q3-2" type="checkbox"
+                                                                                 value="Seminar/Workshops/Competitions/Other events"/><span
+                            style="font-size: 1.25rem">Seminar/Workshops/Competitions/Other events </span></label></p>
+                    </div>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q3-3" type="checkbox"
+                                                                                 value="Scholarships"/><span
+                            style="font-size: 1.25rem">Scholarships</span></label></p></div>
+                </div>
+            </li>
 
+            <!--Q3-->
+            <li class="collection-item">
+                <div class="row"><br>
+                    <div class="col s1 l1 "><span class="flow-text">3.</span></div>
+                    <div class="col s11  l11 "><span class="flow-text">Are you interested in active participation in committees?</span>
+                    </div>
+                    <br><br>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q4-1" type="checkbox"
+                                                                                 value="Advisory Board"/><span
+                            style="font-size: 1.25rem">Advisory Board</span></label></p></div>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q4-2" type="checkbox"
+                                                                                 value="Syllabus Committee"/><span
+                            style="font-size: 1.25rem">Syllabus Committee</span></label></p></div>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q4-3" type="checkbox"
+                                                                                 value="FDP/Conference Committee"/><span
+                            style="font-size: 1.25rem">FDP/Conference Committee</span></label></p></div>
+                </div>
+            </li>
 
+            <!--Q4-->
+            <li class="collection-item">
+                <div class="row"><br>
+                    <div class="col s1 l1 "><span class="flow-text">4.</span></div>
+                    <div class="col s11  l11 "><span class="flow-text">Are you willing to collaborate with activities of PICT?</span>
+                    </div>
+                    <br><br>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q5-1" type="checkbox"
+                                                                                 value="Joint research"/><span
+                            style="font-size: 1.25rem">Joint research</span></label></p></div>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q5-2" type="checkbox"
+                                                                                 value="Consultancy"/><span
+                            style="font-size: 1.25rem">Consultancy</span></label></p></div>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q5-3" type="checkbox"
+                                                                                 value="Academic projects(UG/PG)"/><span
+                            style="font-size: 1.25rem">Academic projects(UG/PG)</span></label></p></div>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q5-4" type="checkbox"
+                                                                                 value="Internship"/><span
+                            style="font-size: 1.25rem">Internship</span></label></p></div>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q5-5" type="checkbox"
+                                                                                 value="Industrial Visits"/><span
+                            style="font-size: 1.25rem">Industrial Visits</span></label></p></div>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q5-6" type="checkbox"
+                                                                                 value="Training Programs/ Invited talks/ Seminar"/><span
+                            style="font-size: 1.25rem">Training Programs/ Invited talks/ Seminar</span></label></p>
+                    </div>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q5-7" type="checkbox"
+                                                                                 value="Workshops/ Faculty Development Programs"/><span
+                            style="font-size: 1.25rem">Workshops/ Faculty Development Programs</span></label></p></div>
+                    <div class="col l5 offset-l1 s11 offset-s1"><p><label><input name="q5-8" type="checkbox"
+                                                                                 value="MOUs with Industry"/><span
+                            style="font-size: 1.25rem">MOUs with Industry</span></label></p></div>
 
+                </div>
+                <div class="input-field col s10 offset-s2 l6 offset-l1">
+                    <textarea placeholder="" name="q5-9" id="area" type="text" class="materialize-textarea validate"></textarea>
+                    <label for="area">
+                        <spam class="flow-text">Other Areas</spam>
+                    </label>
+                </div>
+            </li>
 
+            <!--q6-->
+            <li class="collection-item">
+                <div class="row"><br>
+                    <div class="col s1 l1 "><span class="flow-text">5.</span></div>
+                    <div class="col s11  l11 "><span class="flow-text">Are you willing to contribute to Alumni Fund for development of PICT?</span>
+                    </div>
+                    <br><br>
+                    <div class="input-field col s10 offset-s2 l6 offset-l1">
+                        <input placeholder="" name="q7" id="amount" type="number" class="validate">
+                        <label for="amount">
+                            <spam class="flow-text">Amount(in &#8377;)</spam>
+                        </label>
+                    </div>
 
+                    <div class="input-field col s10 offset-s2 l6 offset-l1">
+                        <textarea placeholder="" name="q8" id="use" type="text" class="materialize-textarea validate"></textarea>
+                        <label for="use">
+                            <spam class="flow-text">How would you like it to be utilized?</spam>
+                        </label>
+                    </div>
 
+                </div>
+            </li>
+        </ul><br><br>
+        <div class="row">
+            <div class="col l3 offset-l9 s5 offset-s7"><button class="btn waves-effect waves-light blue" type="submit" name="action">Submit<i class="material-icons right">send</i></button></div>
+        </div>
 
+    </form>
 
-
-
-
-
-
-
-
-
-
-
+</div>
 </body>
 </html>
+
+
+
+
