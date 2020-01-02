@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -28,52 +28,13 @@
 </head>
 
 <body>
-<nav class="z-depth-2">
-    <div class="nav-wrapper container center">
-        <a href="/">PICT <span style="font-size: 1.25rem"> Alumni</span></a>
-        <span class="left text-darken-1" style="position: absolute; left:0">
-        <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
-      </span>
-    </div>
-</nav>
-
-
-<!-- side nav -->
-<ul id="side-menu" class="sidenav side-menu">
-    <li>
-        <div class="user-view">
-            <div class="background" style="width: 94%;margin: 3%;">
-                <img src="img/paa.png" class="sidenav-img">
-            </div>
-        </div>
-        <div style="vert-align: middle">
-            <div style="width: 22%; display: inline-block; text-align: right">
-                <i class="material-icons" style="font-size: 4rem">account_circle</i>
-            </div>
-            <div style="line-height: 2rem; width: 74%; display: inline-block">
-                <a href="#email"><span class="grey-text email">jdandturk@gmail.com</span></a>
-            </div>
-        </div>
-    </li>
-    <li><a class="subheader">PICT ALUMNI</a></li>
-    <li><a href="/" class="waves-effect">Home</a></li>
-    <li><a href="register.html" class="waves-effect">Registration</a></li>
-    <li><a href="feedback.html" class="waves-effect">Feedback form</a></li>
-    <li><a href="form3.html" class="waves-effect">Open discussion form</a></li>
-    <li>
-        <div class="divider"></div>
-    </li>
-    <li><a href="/pages/contact.html" class="waves-effect">
-        <i class="material-icons">mail_outline</i>Contact</a>
-    </li>
-</ul>
+<div w3-include-html="theme.html"></div>
 
 
 <div class="container">
     <div class="row">
         <h1>Feedback</h1>
     </div>
-
 
 
     <!-- Feedback Form  -->
@@ -95,7 +56,6 @@
             </li>
 
 
-
             <li class="collection-item">
                 <!-- QN2 -->
                 <div class="row">
@@ -109,7 +69,7 @@
                                                                                 value="good"/><span
                             style="font-size: 1.25rem">Agree</span></label></p></div>
                     <div class="col l3 offset-l1 s10 offset-s1"><p><label><input required name="q2" type="radio"
-                                                                                value="average"/><span
+                                                                                 value="average"/><span
                             style="font-size: 1.25rem">Disagree</span></label></p>
                     </div>
                 </div>
@@ -119,36 +79,42 @@
                 <!-- QN3 -->
                 <div class="row">
                     <div class="col l1 s1"><span class="flow-text">3.</span></div>
-                    <div class="col l11 s11"><span class="flow-text">Are you satisfied with program educational objectives of CE/IT/E&amp;TC? </span></div>
-                    <div class="col l5 offset-l1 s5 offset-s1"><p><label><input required name="q3" type="radio" value="yes"/><span style="font-size: 1.25rem">Yes</span></label></p></div>
-                    <div class="col l5 offset-l1 s5 offset-s1"><p><label><input required name="q3" type="radio" value="no"/><span style="font-size: 1.25rem">No</span></label></p></div>
-                
+                    <div class="col l11 s11"><span class="flow-text">Are you satisfied with program educational objectives of CE/IT/E&amp;TC? </span>
+                    </div>
+                    <div class="col l5 offset-l1 s5 offset-s1"><p><label><input required name="q3" type="radio"
+                                                                                value="yes"/><span
+                            style="font-size: 1.25rem">Yes</span></label></p></div>
+                    <div class="col l5 offset-l1 s5 offset-s1"><p><label><input required name="q3" type="radio"
+                                                                                value="no"/><span
+                            style="font-size: 1.25rem">No</span></label></p></div>
+
                     <!-- Modal -->
                     <div class="col s3 offset-s1">
                         <!-- Modal Trigger -->
-                            <a class="btn waves-effect waves-light blue btn modal-trigger" href="#modal1">See Objectives</a>
+                        <a class="btn waves-effect waves-light blue btn modal-trigger" href="#modal1">See Objectives</a>
 
                         <!-- Modal Structure -->
-                            <div id="modal1" class="modal">
-                                <div class="modal-content">
-                                    <img class="responsive-img" src="./img/Program Educational Objectives Computer Engineering.png">
-                                    <img class="responsive-img" src="./img/Program Educational Objectives Department of Information Technology.png">
-                                    <img class="responsive-img" src="./img/Program Educational Objectives Electronics and Telecommunication.png">
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <img class="responsive-img"
+                                     src="./img/Program Educational Objectives Computer Engineering.png">
+                                <img class="responsive-img"
+                                     src="./img/Program Educational Objectives Department of Information Technology.png">
+                                <img class="responsive-img"
+                                     src="./img/Program Educational Objectives Electronics and Telecommunication.png">
 
 
-                                </div>
-                                <div class="modal-footer">
-                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-                                </div>
                             </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                            </div>
+                        </div>
 
                     </div>
-                
-                
-                
+
+
                 </div>
             </li>
-
 
 
             <li class="collection-item">
@@ -180,7 +146,7 @@
                             style="font-size: 1.25rem">No</span></label></p></div>
                 </div>
             </li>
-           
+
             <li class="collection-item">
                 <!-- QN6 -->
                 <div class="row">
@@ -227,7 +193,7 @@
                             style="font-size: 1.25rem">No</span></label></p></div>
                 </div>
             </li>
-            
+
             <li class="collection-item">
                 <!-- QN9 -->
                 <div class="row">
@@ -256,7 +222,7 @@
                                                                                 value="good"/><span
                             style="font-size: 1.25rem">Good</span></label></p></div>
                     <div class="col l3 offset-l1 s11 offset-s1"><p><label><input required name="q10" type="radio"
-                                                                                value="average"/><span
+                                                                                 value="average"/><span
                             style="font-size: 1.25rem">Needs Improvement</span></label></p>
                     </div>
                 </div>
@@ -266,19 +232,21 @@
                 <!-- QN11 -->
                 <div class="row">
                     <div class="col l1 s1"><span class="flow-text">11.</span></div>
-                    <div class="col l11 s11"><span class="flow-text"> How do you want to grow Alma Mater and what is your vision for Alma Mater? </span> </div>
+                    <div class="col l11 s11"><span class="flow-text"> How do you want to grow Alma Mater and what is your vision for Alma Mater? </span>
+                    </div>
                     <div class="input-field col s7 offset-s2">
                         <textarea id="q11" class="materialize-textarea validate"></textarea>
                         <label for="q11"></label>
                     </div>
                 </div>
             </li>
-            
+
             <li class="collection-item">
                 <!-- QN12 -->
                 <div class="row">
                     <div class="col l1 s1"><span class="flow-text">12.</span></div>
-                    <div class="col l11 s11"><span class="flow-text"> How do you want to contribute to the institute?  </span> </div>
+                    <div class="col l11 s11"><span
+                            class="flow-text"> How do you want to contribute to the institute?  </span></div>
                     <div class="input-field col s7 offset-s2">
                         <textarea id="q12" class="materialize-textarea validate"></textarea>
                         <label for="q12"></label>
@@ -290,7 +258,8 @@
                 <!-- QN13 -->
                 <div class="row">
                     <div class="col l1 s1"><span class="flow-text">13.</span></div>
-                    <div class="col l11 s11"><span class="flow-text">  What is the best time to conduct this event?  </span> </div>
+                    <div class="col l11 s11"><span
+                            class="flow-text">  What is the best time to conduct this event?  </span></div>
                     <div class="input-field col s7 offset-s2">
                         <textarea id="q13" class="materialize-textarea validate"></textarea>
                         <label for="q13"></label>
@@ -303,142 +272,133 @@
                 <div class="row">
                     <div class="col l1 s1"><span class="flow-text">14.</span></div>
                     <div class="col l11 s11"><span class="flow-text">  What steps institute should take to further improve alumni engagement? Suggest the means of
-                        alumni engagement. </span> </div>
+                        alumni engagement. </span></div>
                     <div class="input-field col s7 offset-s2">
                         <textarea id="q13" class="materialize-textarea validate"></textarea>
                         <label for="q14"></label>
                     </div>
                 </div>
             </li>
-            
-            
-            
+
 
         </ul>
-    
 
 
+        <div class="row"><h2> NIRF Perception Feedback Survey 2019 - ALUMNI</h2></div>
+        <ul class="collection">
+
+            <li class="collection-item">
+                <!-- QN15 -->
+                <div class="row">
+                    <div class="col l1 s1"><span class="flow-text">1.</span></div>
+                    <div class="col l11 s10"><span class="flow-text">I feel proud to have graduated from PICT.</span>
+                    </div>
+                    <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q15" type="radio"
+                                                                                value="strongly_agree"/><span
+                            style="font-size: 1.25rem">Strongly Agree</span></label></p></div>
+                    <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q15" type="radio"
+                                                                                value="agree"/><span
+                            style="font-size: 1.25rem">Agree</span></label></p></div>
+                    <div class="col l3 offset-l1 s11 offset-s1"><p><label><input required name="q15"
+                                                                                 value="disagree"
+                                                                                 type="radio"/><span
+                            style="font-size: 1.25rem">Disagree</span></label></p></div>
+
+                </div>
+            </li>
+
+            <li class="collection-item">
+                <!-- QN16 -->
+                <div class="row">
+                    <div class="col l1 s1"><span class="flow-text">2.</span></div>
+                    <div class="col l11 s10"><span class="flow-text">The training & placement cell provided ample on campus opportunities.</span>
+                    </div>
+                    <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q16" type="radio"
+                                                                                value="strongly_agree"/><span
+                            style="font-size: 1.25rem">Strongly Agree</span></label></p></div>
+                    <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q16" type="radio"
+                                                                                value="agree"/><span
+                            style="font-size: 1.25rem">Agree</span></label></p></div>
+                    <div class="col l3 offset-l1 s11 offset-s1"><p><label><input required name="q16"
+                                                                                 value="disagree"
+                                                                                 type="radio"/><span
+                            style="font-size: 1.25rem">Disagree</span></label></p></div>
+
+                </div>
+            </li>
+
+            <li class="collection-item">
+                <!-- QN17 -->
+                <div class="row">
+                    <div class="col l1 s1"><span class="flow-text">3.</span></div>
+                    <div class="col l11 s10"><span class="flow-text">The workshops, seminars, guest lectures, certificate programmes, internships and projects helped me to develop a strong industry connect.</span>
+                    </div>
+                    <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q17" type="radio"
+                                                                                value="strongly_agree"/><span
+                            style="font-size: 1.25rem">Strongly Agree</span></label></p></div>
+                    <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q17" type="radio"
+                                                                                value="agree"/><span
+                            style="font-size: 1.25rem">Agree</span></label></p></div>
+                    <div class="col l3 offset-l1 s11 offset-s1"><p><label><input required name="q17"
+                                                                                 value="disagree"
+                                                                                 type="radio"/><span
+                            style="font-size: 1.25rem">Disagree</span></label></p></div>
+
+                </div>
+            </li>
+
+            <li class="collection-item">
+                <!-- QN18 -->
+                <div class="row">
+                    <div class="col l1 s1"><span class="flow-text">4.</span></div>
+                    <div class="col l11 s10"><span class="flow-text">The value education lectures have helped me mature into a culturally rich and self-reliant individual.</span>
+                    </div>
+                    <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q18" type="radio"
+                                                                                value="strongly_agree"/><span
+                            style="font-size: 1.25rem">Strongly Agree</span></label></p></div>
+                    <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q18" type="radio"
+                                                                                value="agree"/><span
+                            style="font-size: 1.25rem">Agree</span></label></p></div>
+                    <div class="col l3 offset-l1 s11 offset-s1"><p><label><input required name="q18"
+                                                                                 value="disagree"
+                                                                                 type="radio"/><span
+                            style="font-size: 1.25rem">Disagree</span></label></p></div>
+
+                </div>
+            </li>
+
+            <li class="collection-item">
+                <!-- QN19 -->
+                <div class="row">
+                    <div class="col l1 s1"><span class="flow-text">5.</span></div>
+                    <div class="col l11 s10"><span class="flow-text">PICT students are well accepted by corporates and abroad universities.</span>
+                    </div>
+                    <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q19" type="radio"
+                                                                                value="strongly-agree"/><span
+                            style="font-size: 1.25rem">Strongly Agree</span></label></p></div>
+                    <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q19" type="radio"
+                                                                                value="agree"/><span
+                            style="font-size: 1.25rem">Agree</span></label></p></div>
+                    <div class="col l3 offset-l1 s11 offset-s1"><p><label><input required name="q19"
+                                                                                 value="disagree"
+                                                                                 type="radio"/><span
+                            style="font-size: 1.25rem">Disagree</span></label></p></div>
+
+                </div>
+            </li>
 
 
+        </ul>
 
-
-
-
-
-
-
-    <div class="row"> <h2>  NIRF Perception Feedback Survey 2019 - ALUMNI</h2></div>
-    <ul class="collection">
-
-        <li class="collection-item">
-            <!-- QN15 -->
-            <div class="row">
-                <div class="col l1 s1"><span class="flow-text">1.</span></div>
-                <div class="col l11 s10"><span class="flow-text">I feel proud to have graduated from PICT.</span></div>
-                <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q15" type="radio"
-                                                                            value="strongly_agree"/><span
-                        style="font-size: 1.25rem">Strongly Agree</span></label></p></div>
-                <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q15" type="radio"
-                                                                            value="agree"/><span
-                        style="font-size: 1.25rem">Agree</span></label></p></div>
-                <div class="col l3 offset-l1 s11 offset-s1"><p><label><input required name="q15"
-                                                                            value="disagree"
-                                                                            type="radio"/><span
-                        style="font-size: 1.25rem">Disagree</span></label></p></div>
-
+        <div class="row">
+            <div class="col l3 offset-l9 s5 offset-s7">
+                <button class="btn waves-effect waves-light blue" type="submit" name="action">Submit<i
+                        class="material-icons right">send</i></button>
             </div>
-        </li>
-
-        <li class="collection-item">
-            <!-- QN16 -->
-            <div class="row">
-                <div class="col l1 s1"><span class="flow-text">2.</span></div>
-                <div class="col l11 s10"><span class="flow-text">The training & placement cell provided ample on campus opportunities.</span></div>
-                <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q16" type="radio"
-                                                                            value="strongly_agree"/><span
-                        style="font-size: 1.25rem">Strongly Agree</span></label></p></div>
-                <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q16" type="radio"
-                                                                            value="agree"/><span
-                        style="font-size: 1.25rem">Agree</span></label></p></div>
-                <div class="col l3 offset-l1 s11 offset-s1"><p><label><input required name="q16"
-                                                                            value="disagree"
-                                                                            type="radio"/><span
-                        style="font-size: 1.25rem">Disagree</span></label></p></div>
-
-            </div>
-        </li>
-
-        <li class="collection-item">
-            <!-- QN17 -->
-            <div class="row">
-                <div class="col l1 s1"><span class="flow-text">3.</span></div>
-                <div class="col l11 s10"><span class="flow-text">The workshops, seminars, guest lectures, certificate programmes, internships and projects helped me to develop a strong industry connect.</span></div>
-                <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q17" type="radio"
-                                                                            value="strongly_agree"/><span
-                        style="font-size: 1.25rem">Strongly Agree</span></label></p></div>
-                <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q17" type="radio"
-                                                                            value="agree"/><span
-                        style="font-size: 1.25rem">Agree</span></label></p></div>
-                <div class="col l3 offset-l1 s11 offset-s1"><p><label><input required name="q17"
-                                                                            value="disagree"
-                                                                            type="radio"/><span
-                        style="font-size: 1.25rem">Disagree</span></label></p></div>
-
-            </div>
-        </li>
-
-        <li class="collection-item">
-            <!-- QN18 -->
-            <div class="row">
-                <div class="col l1 s1"><span class="flow-text">4.</span></div>
-                <div class="col l11 s10"><span class="flow-text">The value education lectures have helped me mature into a culturally rich and self-reliant individual.</span></div>
-                <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q18" type="radio"
-                                                                            value="strongly_agree"/><span
-                        style="font-size: 1.25rem">Strongly Agree</span></label></p></div>
-                <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q18" type="radio"
-                                                                            value="agree"/><span
-                        style="font-size: 1.25rem">Agree</span></label></p></div>
-                <div class="col l3 offset-l1 s11 offset-s1"><p><label><input required name="q18"
-                                                                            value="disagree"
-                                                                            type="radio"/><span
-                        style="font-size: 1.25rem">Disagree</span></label></p></div>
-
-            </div>
-        </li>
-
-        <li class="collection-item">
-            <!-- QN19 -->
-            <div class="row">
-                <div class="col l1 s1"><span class="flow-text">5.</span></div>
-                <div class="col l11 s10"><span class="flow-text">PICT students are well accepted by corporates and abroad universities.</span></div>
-                <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q19" type="radio"
-                                                                            value="strongly-agree"/><span
-                        style="font-size: 1.25rem">Strongly Agree</span></label></p></div>
-                <div class="col l3 offset-l1 s5 offset-s1"><p><label><input required name="q19" type="radio"
-                                                                            value="agree"/><span
-                        style="font-size: 1.25rem">Agree</span></label></p></div>
-                <div class="col l3 offset-l1 s11 offset-s1"><p><label><input required name="q19"
-                                                                            value="disagree"
-                                                                            type="radio"/><span
-                        style="font-size: 1.25rem">Disagree</span></label></p></div>
-
-            </div>
-        </li>
+        </div>
 
 
-        
-
-    </ul>
- 
-    <div class="row">
-        <div class="col l3 offset-l9 s5 offset-s7"><button class="btn waves-effect waves-light blue" type="submit" name="action">Submit<i class="material-icons right">send</i></button></div>
-    </div>
-
-
-</form>
-
-
-
+    </form>
 
 
     <div id="loading"
