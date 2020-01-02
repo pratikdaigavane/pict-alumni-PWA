@@ -36,7 +36,8 @@ $(document).ready(() => {
                 if(res.status == "success") {
                     console.log("Auth successful");
                     user = res.user;
-                    $(".email").text(user);
+                    $(".email").text(user.email);
+                    $(".welcomeName").text(user.name);
                 }
             },
             error: function (err) {
