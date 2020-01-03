@@ -1,10 +1,10 @@
 const staticCacheName = 'site-static6';
 const assets6 = [
     '',
-    '/index.html',
-    '/register.html',
-    '/js/feedback.js',
-    '/img/paa.png',
+    './index.html',
+    './register.html',
+    './js/feedback.js',
+    './img/paa.png',
 ];
 
 // install event

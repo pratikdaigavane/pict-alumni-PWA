@@ -18,7 +18,7 @@ var user;
 $(document).ready(() => {
     if(getCookie('auth')=="" || getCookie('auth')==null)
     {
-        window.location = "/";
+        window.location = "./";
         M.toast({html: "Please login"})
     }else
     {
@@ -41,7 +41,7 @@ $(document).ready(() => {
                 }
             },
             error: function (err) {
-                window.location = "/?redirect=" + window.location.href;
+                window.location = "./?redirect=" + window.location.href;
                 M.toast({html: "Please login"})
             }
         })

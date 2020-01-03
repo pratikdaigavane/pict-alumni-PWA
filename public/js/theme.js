@@ -45,7 +45,7 @@ $(document).ready(() => {
     includeHTML();
     M.AutoInit();
     $('.sidenav').sidenav();
-    $('img[src="img/paa.png"]').on("load", () => {
+    $('img[src="./img/paa.png"]').on("load", () => {
         $(".user-view").height($(".sidenav-img").height());
     });
     scrollTo(0, 0);
