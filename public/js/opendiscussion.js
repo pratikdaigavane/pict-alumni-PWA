@@ -69,7 +69,7 @@ $(document).ready(() => {
                         $("#loading").hide();
                         M.toast({html: res.status});
                         setCookie('opendiscussion', true, 2);
-                        window.location = '/response.html'
+                        window.location = './response.html'
                     },
                     error: function (err) {
                         $("#loading").hide();

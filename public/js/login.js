@@ -60,8 +60,11 @@ $(document).ready(() => {
                     success: function (res) {
                         $("#loading").hide();
                         M.toast({html: res.status});
+                        document.cookie="feedback=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+                        document.cookie="opendiscussion=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
                         if(res.status == 'success')
                             setCookie('auth', res.token, 1);
+
                         if(findGetParameter('redirect'))
                             window.location = findGetParameter('redirect');
                         else
